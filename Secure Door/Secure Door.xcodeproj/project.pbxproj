@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C2299CD2205957F0031E60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299CC2205957F0031E60F /* AppDelegate.swift */; };
+		4C2299CF2205957F0031E60F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299CE2205957F0031E60F /* ViewController.swift */; };
+		4C2299D22205957F0031E60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2299D02205957F0031E60F /* Main.storyboard */; };
+		4C2299D52205957F0031E60F /* Secure_Door.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299D32205957F0031E60F /* Secure_Door.xcdatamodeld */; };
+		4C2299D7220595810031E60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2299D6220595810031E60F /* Assets.xcassets */; };
+		4C2299DA220595810031E60F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2299D8220595810031E60F /* LaunchScreen.storyboard */; };
+		4C2299E5220595810031E60F /* Secure_DoorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299E4220595810031E60F /* Secure_DoorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C2299E1220595810031E60F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C2299C12205957F0031E60F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C2299C82205957F0031E60F;
+			remoteInfo = "Secure Door";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C2299C92205957F0031E60F /* Secure Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Secure Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2299CC2205957F0031E60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C2299CE2205957F0031E60F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C2299D12205957F0031E60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C2299D42205957F0031E60F /* Secure_Door.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Secure_Door.xcdatamodel; sourceTree = "<group>"; };
+		4C2299D6220595810031E60F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C2299D9220595810031E60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C2299DB220595810031E60F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2299E0220595810031E60F /* Secure DoorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Secure DoorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2299E4220595810031E60F /* Secure_DoorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure_DoorTests.swift; sourceTree = "<group>"; };
+		4C2299E6220595810031E60F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C2299C62205957F0031E60F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2299DD220595810031E60F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C2299C02205957F0031E60F = {
+			isa = PBXGroup;
+			children = (
+				4C2299CB2205957F0031E60F /* Secure Door */,
+				4C2299E3220595810031E60F /* Secure DoorTests */,
+				4C2299CA2205957F0031E60F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C2299CA2205957F0031E60F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C2299C92205957F0031E60F /* Secure Door.app */,
+				4C2299E0220595810031E60F /* Secure DoorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C2299CB2205957F0031E60F /* Secure Door */ = {
+			isa = PBXGroup;
+			children = (
+				4C2299CC2205957F0031E60F /* AppDelegate.swift */,
+				4C2299CE2205957F0031E60F /* ViewController.swift */,
+				4C2299D02205957F0031E60F /* Main.storyboard */,
+				4C2299D6220595810031E60F /* Assets.xcassets */,
+				4C2299D8220595810031E60F /* LaunchScreen.storyboard */,
+				4C2299DB220595810031E60F /* Info.plist */,
+				4C2299D32205957F0031E60F /* Secure_Door.xcdatamodeld */,
+			);
+			path = "Secure Door";
+			sourceTree = "<group>";
+		};
+		4C2299E3220595810031E60F /* Secure DoorTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C2299E4220595810031E60F /* Secure_DoorTests.swift */,
+				4C2299E6220595810031E60F /* Info.plist */,
+			);
+			path = "Secure DoorTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C2299C82205957F0031E60F /* Secure Door */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2299E9220595810031E60F /* Build configuration list for PBXNativeTarget "Secure Door" */;
+			buildPhases = (
+				4C2299C52205957F0031E60F /* Sources */,
+				4C2299C62205957F0031E60F /* Frameworks */,
+				4C2299C72205957F0031E60F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Secure Door";
+			productName = "Secure Door";
+			productReference = 4C2299C92205957F0031E60F /* Secure Door.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C2299DF220595810031E60F /* Secure DoorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2299EC220595810031E60F /* Build configuration list for PBXNativeTarget "Secure DoorTests" */;
+			buildPhases = (
+				4C2299DC220595810031E60F /* Sources */,
+				4C2299DD220595810031E60F /* Frameworks */,
+				4C2299DE220595810031E60F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C2299E2220595810031E60F /* PBXTargetDependency */,
+			);
+			name = "Secure DoorTests";
+			productName = "Secure DoorTests";
+			productReference = 4C2299E0220595810031E60F /* Secure DoorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C2299C12205957F0031E60F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Jakov;
+				TargetAttributes = {
+					4C2299C82205957F0031E60F = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4C2299DF220595810031E60F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4C2299C82205957F0031E60F;
+					};
+				};
+			};
+			buildConfigurationList = 4C2299C42205957F0031E60F /* Build configuration list for PBXProject "Secure Door" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C2299C02205957F0031E60F;
+			productRefGroup = 4C2299CA2205957F0031E60F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C2299C82205957F0031E60F /* Secure Door */,
+				4C2299DF220595810031E60F /* Secure DoorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C2299C72205957F0031E60F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2299DA220595810031E60F /* LaunchScreen.storyboard in Resources */,
+				4C2299D7220595810031E60F /* Assets.xcassets in Resources */,
+				4C2299D22205957F0031E60F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2299DE220595810031E60F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C2299C52205957F0031E60F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2299D52205957F0031E60F /* Secure_Door.xcdatamodeld in Sources */,
+				4C2299CF2205957F0031E60F /* ViewController.swift in Sources */,
+				4C2299CD2205957F0031E60F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2299DC220595810031E60F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2299E5220595810031E60F /* Secure_DoorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C2299E2220595810031E60F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C2299C82205957F0031E60F /* Secure Door */;
+			targetProxy = 4C2299E1220595810031E60F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C2299D02205957F0031E60F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C2299D12205957F0031E60F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C2299D8220595810031E60F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C2299D9220595810031E60F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C2299E7220595810031E60F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C2299E8220595810031E60F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C2299EA220595810031E60F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
+				INFOPLIST_FILE = "Secure Door/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-Door";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C2299EB220595810031E60F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
+				INFOPLIST_FILE = "Secure Door/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-Door";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4C2299ED220595810031E60F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
+				INFOPLIST_FILE = "Secure DoorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-DoorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Secure Door.app/Secure Door";
+			};
+			name = Debug;
+		};
+		4C2299EE220595810031E60F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
+				INFOPLIST_FILE = "Secure DoorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-DoorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Secure Door.app/Secure Door";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C2299C42205957F0031E60F /* Build configuration list for PBXProject "Secure Door" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2299E7220595810031E60F /* Debug */,
+				4C2299E8220595810031E60F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C2299E9220595810031E60F /* Build configuration list for PBXNativeTarget "Secure Door" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2299EA220595810031E60F /* Debug */,
+				4C2299EB220595810031E60F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C2299EC220595810031E60F /* Build configuration list for PBXNativeTarget "Secure DoorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2299ED220595810031E60F /* Debug */,
+				4C2299EE220595810031E60F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C2299D32205957F0031E60F /* Secure_Door.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C2299D42205957F0031E60F /* Secure_Door.xcdatamodel */,
+			);
+			currentVersion = 4C2299D42205957F0031E60F /* Secure_Door.xcdatamodel */;
+			path = Secure_Door.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4C2299C12205957F0031E60F /* Project object */;
+}
