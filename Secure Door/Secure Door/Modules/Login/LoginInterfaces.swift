@@ -21,6 +21,7 @@ protocol LoginViewInterface: ViewInterface {
 }
 
 protocol LoginPresenterInterface: PresenterInterface {
+    var _view:LoginViewInterface? { get set }
     func loginAction(username: String?, password: String?)
 }
 

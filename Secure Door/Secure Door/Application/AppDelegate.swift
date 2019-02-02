@@ -20,12 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        let initialController = SecureDoorNavigationController()
-        initialController.setRootWireframe(LoginWireframe())
+        let appContainer = AppContainer.build()
+        let loginContainer = LoginContainer.build(parentContainer: appContainer)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        self.window?.rootViewController = initialController
+        self.window?.rootViewController = loginContainer.resolve(LoginViewController.self)
         self.window?.makeKeyAndVisible()
         
         return true

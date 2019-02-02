@@ -14,15 +14,14 @@ final class LoginPresenter {
 
     // MARK: - Private properties -
 
-    private unowned let _view: LoginViewInterface
+    weak var _view: LoginViewInterface?
     private let _wireframe: LoginWireframeInterface
     private let _interactor: LoginInteractorInterface
 
     // MARK: - Lifecycle -
 
-    init(wireframe: LoginWireframeInterface, view: LoginViewInterface, interactor: LoginInteractorInterface) {
+    init(wireframe: LoginWireframeInterface, interactor: LoginInteractorInterface) {
         _wireframe = wireframe
-        _view = view
         _interactor = interactor
     }
 }
@@ -30,6 +29,7 @@ final class LoginPresenter {
 // MARK: - Extensions -
 
 extension LoginPresenter: LoginPresenterInterface {
+
     func loginAction(username: String?, password: String?) {
         guard let username = username, let password = password else {
             return
@@ -38,7 +38,6 @@ extension LoginPresenter: LoginPresenterInterface {
             switch(result){
             case let .Success(success):
                 if success {
-                    
                 }
             case let .Error(error):
                 self?._wireframe.showErrorAlert(with: error.localizedDescription)
