@@ -51,6 +51,10 @@ final class MainMenuViewController: UIViewController {
 // MARK: - Extensions -
 
 extension MainMenuViewController: MainMenuViewInterface {
+    func showUsersButton() {
+        usersButton.isHidden = false
+    }
+    
     func setUserEmail(email: String) {
         usernameLabel.text = email
     }

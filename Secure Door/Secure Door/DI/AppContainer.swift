@@ -35,15 +35,6 @@ final class AppContainer: ContainerProtocol {
         registerHelpers()
         registerServices()
         
-        instance.register(SWRevelController.self) { r in
-            let revelController = SWRevelController()
-            let menuController = MainMenuContainer.instance.resolve(MainMenuViewController.self)!
-            let doorsController = UIViewController()
-            revelController.setMenuController(menuController)
-            revelController.setMainController(doorsController)
-            return revelController
-        }.inObjectScope(.transient)
-        
         return instance
     }
     

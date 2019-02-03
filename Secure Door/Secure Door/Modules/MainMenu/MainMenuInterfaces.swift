@@ -22,6 +22,7 @@ protocol MainMenuWireframeInterface: WireframeInterface {
 protocol MainMenuViewInterface: ViewInterface {
     func hideUsersButton()
     func setUserEmail(email: String)
+    func showUsersButton()
 }
 
 protocol MainMenuPresenterInterface: PresenterInterface {
@@ -35,4 +36,5 @@ protocol MainMenuPresenterInterface: PresenterInterface {
 protocol MainMenuInteractorInterface: InteractorInterface {
     func getUserEmail() -> String?
     func logoutUser()
+    func isAdmin() -> Bool
 }

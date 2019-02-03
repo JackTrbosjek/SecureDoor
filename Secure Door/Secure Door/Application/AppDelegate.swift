@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userService = AppContainer.instance.resolve(UserService.self)!
         var rootController: UIViewController?
         if userService.isUserLoggedIn() {
-            rootController = AppContainer.instance.resolve(SWRevelController.self)
+            rootController = MainMenuContainer.instance.resolve(SWRevelController.self)
         } else {
             rootController = LoginContainer.instance.resolve(LoginViewController.self)
         }

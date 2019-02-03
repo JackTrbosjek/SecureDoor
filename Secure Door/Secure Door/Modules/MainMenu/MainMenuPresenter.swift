@@ -33,6 +33,9 @@ extension MainMenuPresenter: MainMenuPresenterInterface {
     func viewDidLoad() {
         let email = _interactor.getUserEmail()
         view?.setUserEmail(email: email!)
+        if _interactor.isAdmin() {
+            view?.showUsersButton()
+        }
     }
     
     func doorsAction() {

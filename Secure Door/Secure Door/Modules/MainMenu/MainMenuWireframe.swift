@@ -46,7 +46,7 @@ extension MainMenuWireframe: MainMenuWireframeInterface {
     func navigate(to option: MainMenuNavigationOption) {
         switch option {
         case .doors:
-            revelController?.setFront(UIViewController(), animated: true)
+            revelController?.setMainController(UIViewController())
         case .login:
             navigateToLogin()
         default:

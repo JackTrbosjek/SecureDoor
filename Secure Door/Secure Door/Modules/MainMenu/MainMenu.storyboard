@@ -31,10 +31,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zEr-fq-0Pb">
-                                        <rect key="frame" x="0.0" y="86" width="260" height="168"/>
+                                        <rect key="frame" x="0.0" y="86" width="260" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okT-ui-iCQ" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Doors"/>
                                                 <userDefinedRuntimeAttributes>
@@ -45,15 +45,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rou-MO-XkR" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="56" width="260" height="56"/>
+                                                <rect key="frame" x="0.0" y="36" width="260" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Events"/>
                                                 <connections>
                                                     <action selector="menuButtonAction:" destination="zIc-eW-6fX" eventType="touchUpInside" id="TWd-i5-M9L"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Z1-x93" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="112" width="260" height="56"/>
+                                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Z1-x93" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="72" width="260" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Users"/>
                                                 <connections>

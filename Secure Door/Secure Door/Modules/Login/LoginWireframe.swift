@@ -42,7 +42,7 @@ extension LoginWireframe: LoginWireframeInterface {
     }
     
     private func navigateToHome() {
-        let homeController = AppContainer.instance.resolve(SWRevelController.self)!
+        let homeController = MainMenuContainer.instance.resolve(SWRevelController.self)!
         UIApplication.shared.keyWindow?.rootViewController = homeController
     }
 }
