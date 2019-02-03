@@ -16,6 +16,7 @@
 		4C122E6C22061F1D000569BD /* MainMenuWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6622061F1D000569BD /* MainMenuWireframe.swift */; };
 		4C122E6E22061FEC000569BD /* MainMenuContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6D22061FEC000569BD /* MainMenuContainer.swift */; };
 		4C122E70220621BC000569BD /* SWRevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6F220621BC000569BD /* SWRevelController.swift */; };
+		4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15A4142206EE9E0070C239 /* MenuButton.swift */; };
 		4C2299CD2205957F0031E60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299CC2205957F0031E60F /* AppDelegate.swift */; };
 		4C2299D52205957F0031E60F /* Secure_Door.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299D32205957F0031E60F /* Secure_Door.xcdatamodeld */; };
 		4C2299D7220595810031E60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2299D6220595810031E60F /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		4C122E6622061F1D000569BD /* MainMenuWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuWireframe.swift; sourceTree = "<group>"; };
 		4C122E6D22061FEC000569BD /* MainMenuContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuContainer.swift; sourceTree = "<group>"; };
 		4C122E6F220621BC000569BD /* SWRevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRevelController.swift; sourceTree = "<group>"; };
+		4C15A4142206EE9E0070C239 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		4C2299C92205957F0031E60F /* Secure Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Secure Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2299CC2205957F0031E60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C2299D42205957F0031E60F /* Secure_Door.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Secure_Door.xcdatamodel; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 				4C122E6622061F1D000569BD /* MainMenuWireframe.swift */,
 			);
 			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		4C15A4132206EE660070C239 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C15A4142206EE9E0070C239 /* MenuButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4C2299C02205957F0031E60F = {
@@ -240,6 +250,7 @@
 		4C229A0A220596EA0031E60F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4C15A4132206EE660070C239 /* Views */,
 				4C229A0B220596EF0031E60F /* Extensions */,
 			);
 			path = Common;
@@ -497,6 +508,7 @@
 				4C2299F52205964F0031E60F /* BaseInteractor.swift in Sources */,
 				4C229A1B22059B240031E60F /* LoginPresenter.swift in Sources */,
 				4C229A2622059E160031E60F /* Result.swift in Sources */,
+				4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */,
 				4C229A2422059C090031E60F /* FirebaseUserService.swift in Sources */,
 				4C229A1C22059B240031E60F /* LoginInterfaces.swift in Sources */,
 				4C122E6C22061F1D000569BD /* MainMenuWireframe.swift in Sources */,

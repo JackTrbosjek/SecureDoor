@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICE-wv-KCe">
-                                <rect key="frame" x="0.0" y="20" width="300" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="260" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxR-LS-2MX">
-                                        <rect key="frame" x="8" y="8" width="284" height="70"/>
+                                        <rect key="frame" x="8" y="8" width="244" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Agl-T5-y99"/>
                                         </constraints>
@@ -31,32 +31,47 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zEr-fq-0Pb">
-                                        <rect key="frame" x="0.0" y="86" width="300" height="108"/>
+                                        <rect key="frame" x="0.0" y="86" width="260" height="168"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okT-ui-iCQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="36"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okT-ui-iCQ" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Doors"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="active" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="menuButtonAction:" destination="zIc-eW-6fX" eventType="touchUpInside" id="VHh-R9-ZMZ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rou-MO-XkR">
-                                                <rect key="frame" x="0.0" y="36" width="300" height="36"/>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rou-MO-XkR" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="56" width="260" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Events"/>
+                                                <connections>
+                                                    <action selector="menuButtonAction:" destination="zIc-eW-6fX" eventType="touchUpInside" id="TWd-i5-M9L"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Z1-x93">
-                                                <rect key="frame" x="0.0" y="72" width="300" height="36"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Z1-x93" customClass="MenuButton" customModule="Secure_Door" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="112" width="260" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Users"/>
+                                                <connections>
+                                                    <action selector="menuButtonAction:" destination="zIc-eW-6fX" eventType="touchUpInside" id="zxs-fx-A7v"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu9-TI-yea">
-                                        <rect key="frame" x="0.0" y="603" width="300" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="600" width="260" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="logouButtonAction:" destination="zIc-eW-6fX" eventType="touchUpInside" id="0IU-A0-TY0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xu9-TI-yea" secondAttribute="bottom" constant="8" id="4vL-9t-3Aa"/>
                                     <constraint firstAttribute="trailing" secondItem="xu9-TI-yea" secondAttribute="trailing" id="5Va-dN-OC0"/>
@@ -67,11 +82,11 @@
                                     <constraint firstItem="RxR-LS-2MX" firstAttribute="top" secondItem="ICE-wv-KCe" secondAttribute="top" constant="8" id="e6w-5x-4jc"/>
                                     <constraint firstItem="RxR-LS-2MX" firstAttribute="leading" secondItem="ICE-wv-KCe" secondAttribute="leading" constant="8" id="mH4-7d-fwu"/>
                                     <constraint firstAttribute="trailing" secondItem="zEr-fq-0Pb" secondAttribute="trailing" id="qbS-Oc-2zp"/>
-                                    <constraint firstAttribute="width" constant="300" id="tw0-8h-MKp"/>
+                                    <constraint firstAttribute="width" constant="260" id="tw0-8h-MKp"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ICE-wv-KCe" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" id="8lo-dw-Sr7"/>
                             <constraint firstItem="ICE-wv-KCe" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="nTy-v5-VbJ"/>
@@ -81,6 +96,10 @@
                     </view>
                     <connections>
                         <outlet property="usernameLabel" destination="RxR-LS-2MX" id="7qt-zq-jxo"/>
+                        <outlet property="usersButton" destination="ErC-Z1-x93" id="55s-wH-Uwv"/>
+                        <outletCollection property="menuButtons" destination="okT-ui-iCQ" collectionClass="NSMutableArray" id="wwv-CI-mXh"/>
+                        <outletCollection property="menuButtons" destination="rou-MO-XkR" collectionClass="NSMutableArray" id="UiV-VR-eGi"/>
+                        <outletCollection property="menuButtons" destination="ErC-Z1-x93" collectionClass="NSMutableArray" id="1ds-at-zfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>

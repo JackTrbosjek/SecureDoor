@@ -10,6 +10,8 @@ import Foundation
 import FirebaseAuth
 
 class FirebaseUserService : UserService {
+    
+    
     lazy var auth: Auth = {
        return Auth.auth()
     }()
@@ -28,5 +30,11 @@ class FirebaseUserService : UserService {
         return auth.currentUser != nil
     }
     
+    func getCurrentUserEmail() -> String? {
+        return auth.currentUser?.email
+    }
     
+    func logoutCurrentUser() {
+        try! auth.signOut()
+    }
 }

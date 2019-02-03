@@ -11,18 +11,28 @@
 import UIKit
 
 enum MainMenuNavigationOption {
+    case doors, events, users, login
 }
 
 protocol MainMenuWireframeInterface: WireframeInterface {
+    var revelController: SWRevelController? { get set }
     func navigate(to option: MainMenuNavigationOption)
 }
 
 protocol MainMenuViewInterface: ViewInterface {
+    func hideUsersButton()
+    func setUserEmail(email: String)
 }
 
 protocol MainMenuPresenterInterface: PresenterInterface {
     var view:MainMenuViewInterface? { get set }
+    func doorsAction()
+    func eventsAction()
+    func usersAction()
+    func logoutAction()
 }
 
 protocol MainMenuInteractorInterface: InteractorInterface {
+    func getUserEmail() -> String?
+    func logoutUser()
 }

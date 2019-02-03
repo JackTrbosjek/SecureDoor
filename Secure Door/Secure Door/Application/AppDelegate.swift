@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    static func getInstance() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -29,10 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var rootController: UIViewController?
         if userService.isUserLoggedIn() {
-            let swController = SWRevelController()
-            swController.setFront(UIViewController(), animated: false)
-            swController.setRear(mainContainer.resolve(MainMenuViewController.self), animated: false)
-            rootController = swController
+            rootController = appContainer.resolve(SWRevelController.self)
         } else {
             rootController = loginContainer.resolve(LoginViewController.self)
         }

@@ -11,6 +11,7 @@
 import UIKit
 
 enum LoginNavigationOption {
+    case home
 }
 
 protocol LoginWireframeInterface: WireframeInterface {

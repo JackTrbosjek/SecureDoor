@@ -38,6 +38,7 @@ extension LoginPresenter: LoginPresenterInterface {
             switch(result){
             case let .Success(success):
                 if success {
+                    self?._wireframe.navigate(to: .home)
                 }
             case let .Error(error):
                 self?._wireframe.showErrorAlert(with: error.localizedDescription)

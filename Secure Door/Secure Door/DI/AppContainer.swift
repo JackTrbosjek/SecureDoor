@@ -11,6 +11,8 @@ import Swinject
 
 final class AppContainer: ContainerProtocol {
     
+    private init(){}
+    
     static var instance: Container!
     
     /// Helper dependency injections
@@ -32,6 +34,16 @@ final class AppContainer: ContainerProtocol {
         instance = Container(defaultObjectScope: .container)
         registerHelpers()
         registerServices()
+        
+        instance.register(SWRevelController.self) { r in
+            let revelController = SWRevelController()
+            let menuController = MainMenuContainer.instance.resolve(MainMenuViewController.self)!
+            let doorsController = UIViewController()
+            revelController.setMenuController(menuController)
+            revelController.setMainController(doorsController)
+            return revelController
+        }.inObjectScope(.transient)
+        
         return instance
     }
     

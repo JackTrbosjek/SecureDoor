@@ -11,10 +11,13 @@ import Swinject
 import SwinjectStoryboard
 
 class MainMenuContainer: ChildContainerProtocol {
+    
+    private init(){}
+    
     static var instance: Container!
     
     static func build(parentContainer: Container) -> Container {
-        instance = Container(parent: parentContainer, defaultObjectScope: .transient)
+        instance = Container(parent: parentContainer, defaultObjectScope: .container)
         
         instance.register(MainMenuInteractorInterface.self) { r in
             MainMenuInteractor(userService: r.resolve(UserService.self)!)
@@ -32,12 +35,13 @@ class MainMenuContainer: ChildContainerProtocol {
             let sb = SwinjectStoryboard.create(name: "MainMenu", bundle: nil, container: r)
             let controller = sb.instantiateViewController(ofType: MainMenuViewController.self)
             return controller
-        }.inObjectScope(ObjectScope.container)
+        }
         
         instance.storyboardInitCompleted(MainMenuViewController.self) { (r, controller) in
             let wireframe = r.resolve(MainMenuWireframeInterface.self)!
             wireframe.viewController = controller
             let presenter = r.resolve(MainMenuPresenterInterface.self)!
+            controller.presenter = presenter
             presenter.view = controller
         }
         

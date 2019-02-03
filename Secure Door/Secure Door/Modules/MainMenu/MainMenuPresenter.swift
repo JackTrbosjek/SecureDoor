@@ -30,4 +30,27 @@ final class MainMenuPresenter {
 
 extension MainMenuPresenter: MainMenuPresenterInterface {
     
+    func viewDidLoad() {
+        let email = _interactor.getUserEmail()
+        view?.setUserEmail(email: email!)
+    }
+    
+    func doorsAction() {
+        _wireframe.navigate(to: .doors)
+    }
+    
+    func eventsAction() {
+        _wireframe.navigate(to: .events)
+    }
+    
+    func usersAction() {
+        _wireframe.navigate(to: .users)
+    }
+    
+    func logoutAction() {
+        _interactor.logoutUser()
+        _wireframe.navigate(to: .login)
+    }
+    
+    
 }

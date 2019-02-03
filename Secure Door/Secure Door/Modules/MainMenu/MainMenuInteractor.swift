@@ -22,4 +22,10 @@ final class MainMenuInteractor {
 // MARK: - Extensions -
 
 extension MainMenuInteractor: MainMenuInteractorInterface {
+    func getUserEmail() -> String? {
+        return _userService.getCurrentUserEmail()
+    }
+    func logoutUser() {
+        _userService.logoutCurrentUser()
+    }
 }

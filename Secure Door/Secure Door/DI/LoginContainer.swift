@@ -11,6 +11,9 @@ import Swinject
 import SwinjectStoryboard
 
 class LoginContainer: ChildContainerProtocol {
+    
+    private init(){}
+    
     static var instance: Container!
     
     static func build(parentContainer: Container) -> Container {
@@ -32,11 +35,11 @@ class LoginContainer: ChildContainerProtocol {
             let sb = SwinjectStoryboard.create(name: "Login", bundle: nil, container: r)
             let controller = sb.instantiateViewController(ofType: LoginViewController.self)
             return controller
-        }.inObjectScope(ObjectScope.container)
+        }
         
         instance.storyboardInitCompleted(LoginViewController.self) { (r, controller) in
-            let wireframe = r.resolve(LoginWireframeInterface.self)
-            wireframe?.viewController = controller
+            let wireframe = r.resolve(LoginWireframeInterface.self)!
+            wireframe.viewController = controller
             controller.presenter = r.resolve(LoginPresenterInterface.self)
             controller.presenter.view = controller
         }

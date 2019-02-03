@@ -11,4 +11,6 @@ import Foundation
 protocol UserService:class {
     func loginUser(email: String, password: String, completion:@escaping (Result<Bool>) -> Void)
     func isUserLoggedIn() -> Bool
+    func getCurrentUserEmail() -> String?
+    func logoutCurrentUser()
 }
