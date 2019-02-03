@@ -54,6 +54,14 @@
 		4CF439B0220774920025C392 /* DoorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439AF220774920025C392 /* DoorService.swift */; };
 		4CF439B32207751E0025C392 /* CoreDataDoorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439B22207751E0025C392 /* CoreDataDoorService.swift */; };
 		4CF439B52207765B0025C392 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439B42207765B0025C392 /* BaseModel.swift */; };
+		4CF439BD22077DA50025C392 /* Doors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF439B722077DA50025C392 /* Doors.storyboard */; };
+		4CF439BE22077DA50025C392 /* DoorsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439B822077DA50025C392 /* DoorsInterfaces.swift */; };
+		4CF439BF22077DA50025C392 /* DoorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439B922077DA50025C392 /* DoorsPresenter.swift */; };
+		4CF439C022077DA50025C392 /* DoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439BA22077DA50025C392 /* DoorsViewController.swift */; };
+		4CF439C122077DA50025C392 /* DoorsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439BB22077DA50025C392 /* DoorsInteractor.swift */; };
+		4CF439C222077DA50025C392 /* DoorsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439BC22077DA50025C392 /* DoorsWireframe.swift */; };
+		4CF439C5220782510025C392 /* DoorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439C4220782510025C392 /* DoorTableViewCell.swift */; };
+		4CF439C722078A4E0025C392 /* DoorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439C622078A4E0025C392 /* DoorsContainer.swift */; };
 		9EB6C0F686443B28A8CB1203 /* Pods_Secure_Door.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5603C1E62E4DF56C3ADC6A /* Pods_Secure_Door.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +129,14 @@
 		4CF439AF220774920025C392 /* DoorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorService.swift; sourceTree = "<group>"; };
 		4CF439B22207751E0025C392 /* CoreDataDoorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDoorService.swift; sourceTree = "<group>"; };
 		4CF439B42207765B0025C392 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		4CF439B722077DA50025C392 /* Doors.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doors.storyboard; sourceTree = "<group>"; };
+		4CF439B822077DA50025C392 /* DoorsInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsInterfaces.swift; sourceTree = "<group>"; };
+		4CF439B922077DA50025C392 /* DoorsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsPresenter.swift; sourceTree = "<group>"; };
+		4CF439BA22077DA50025C392 /* DoorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsViewController.swift; sourceTree = "<group>"; };
+		4CF439BB22077DA50025C392 /* DoorsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsInteractor.swift; sourceTree = "<group>"; };
+		4CF439BC22077DA50025C392 /* DoorsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWireframe.swift; sourceTree = "<group>"; };
+		4CF439C4220782510025C392 /* DoorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorTableViewCell.swift; sourceTree = "<group>"; };
+		4CF439C622078A4E0025C392 /* DoorsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsContainer.swift; sourceTree = "<group>"; };
 		5F0227853240E6C9206CA996 /* Pods-Secure Door.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Secure Door.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Secure Door/Pods-Secure Door.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BECA7421BD912F320915D0 /* Pods-Secure DoorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Secure DoorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Secure DoorTests/Pods-Secure DoorTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA68C7240804192C4E196E1F /* Pods-Secure DoorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Secure DoorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Secure DoorTests/Pods-Secure DoorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +250,7 @@
 		4C2299EF2205962F0031E60F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4CF439B622077D850025C392 /* Doors */,
 				4C122E5422061A3D000569BD /* MainMenu */,
 				4C229A1222059B150031E60F /* Login */,
 				4C2299F0220596370031E60F /* Base */,
@@ -353,6 +370,7 @@
 				4C229A2A2205BB0F0031E60F /* AppContainer.swift */,
 				4C229A2C2205BC880031E60F /* LoginContainer.swift */,
 				4C122E6D22061FEC000569BD /* MainMenuContainer.swift */,
+				4CF439C622078A4E0025C392 /* DoorsContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -382,6 +400,28 @@
 				4CF439B22207751E0025C392 /* CoreDataDoorService.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4CF439B622077D850025C392 /* Doors */ = {
+			isa = PBXGroup;
+			children = (
+				4CF439C3220781E50025C392 /* Cells */,
+				4CF439B722077DA50025C392 /* Doors.storyboard */,
+				4CF439B822077DA50025C392 /* DoorsInterfaces.swift */,
+				4CF439B922077DA50025C392 /* DoorsPresenter.swift */,
+				4CF439BA22077DA50025C392 /* DoorsViewController.swift */,
+				4CF439BB22077DA50025C392 /* DoorsInteractor.swift */,
+				4CF439BC22077DA50025C392 /* DoorsWireframe.swift */,
+			);
+			path = Doors;
+			sourceTree = "<group>";
+		};
+		4CF439C3220781E50025C392 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4CF439C4220782510025C392 /* DoorTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +512,7 @@
 				4C229A1E22059B240031E60F /* Login.storyboard in Resources */,
 				4C2299DA220595810031E60F /* LaunchScreen.storyboard in Resources */,
 				4C2299D7220595810031E60F /* Assets.xcassets in Resources */,
+				4CF439BD22077DA50025C392 /* Doors.storyboard in Resources */,
 				4C229A11220599D60031E60F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,28 +606,35 @@
 				4CF439AE220773B20025C392 /* CoreDore.swift in Sources */,
 				4C229A292205BA2F0031E60F /* ContainerProtocol.swift in Sources */,
 				4C122E6A22061F1D000569BD /* MainMenuViewController.swift in Sources */,
+				4CF439C022077DA50025C392 /* DoorsViewController.swift in Sources */,
 				4C122E70220621BC000569BD /* SWRevelController.swift in Sources */,
 				4CF439B0220774920025C392 /* DoorService.swift in Sources */,
 				4CF439B32207751E0025C392 /* CoreDataDoorService.swift in Sources */,
 				4C122E6E22061FEC000569BD /* MainMenuContainer.swift in Sources */,
 				4C229A1922059B240031E60F /* LoginViewController.swift in Sources */,
+				4CF439C222077DA50025C392 /* DoorsWireframe.swift in Sources */,
 				4CF439A3220767D90025C392 /* CoreDataStack.swift in Sources */,
 				4C2299D52205957F0031E60F /* Secure_Door.xcdatamodeld in Sources */,
 				4C229A2D2205BC880031E60F /* LoginContainer.swift in Sources */,
 				4CF439B52207765B0025C392 /* BaseModel.swift in Sources */,
 				4C122E6922061F1D000569BD /* MainMenuPresenter.swift in Sources */,
 				4CF439A1220744900025C392 /* FirebaseInitializer.swift in Sources */,
+				4CF439C122077DA50025C392 /* DoorsInteractor.swift in Sources */,
 				4C2299F82205964F0031E60F /* BasePresenter.swift in Sources */,
+				4CF439C5220782510025C392 /* DoorTableViewCell.swift in Sources */,
 				4C2299F52205964F0031E60F /* BaseInteractor.swift in Sources */,
 				4C229A1B22059B240031E60F /* LoginPresenter.swift in Sources */,
 				4C229A2622059E160031E60F /* Result.swift in Sources */,
 				4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */,
+				4CF439BF22077DA50025C392 /* DoorsPresenter.swift in Sources */,
 				4C229A2422059C090031E60F /* FirebaseUserService.swift in Sources */,
 				4C229A1C22059B240031E60F /* LoginInterfaces.swift in Sources */,
 				4CF4399F2207444B0025C392 /* ProgressHudInitializer.swift in Sources */,
 				4C122E6C22061F1D000569BD /* MainMenuWireframe.swift in Sources */,
 				4C2299F62205964F0031E60F /* BaseView.swift in Sources */,
 				4CF439A9220772A70025C392 /* Door.swift in Sources */,
+				4CF439BE22077DA50025C392 /* DoorsInterfaces.swift in Sources */,
+				4CF439C722078A4E0025C392 /* DoorsContainer.swift in Sources */,
 				4C229A2B2205BB0F0031E60F /* AppContainer.swift in Sources */,
 				4C229A0D220596FB0031E60F /* UIStoryboardExtension.swift in Sources */,
 				4C2299F72205964F0031E60F /* BaseWireframe.swift in Sources */,

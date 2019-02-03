@@ -37,7 +37,7 @@ class MainMenuContainer: ChildContainerProtocol {
         instance.register(SWRevelController.self) { r in
             let revelController = SWRevelController()
             let menuController = r.resolve(MainMenuViewController.self)!
-            let doorsController = UIViewController()
+            let doorsController = DoorsContainer.instance.resolve(DoorsViewController.self)!
             revelController.setMenuController(menuController)
             revelController.setMainController(doorsController)
             return revelController
@@ -48,12 +48,12 @@ class MainMenuContainer: ChildContainerProtocol {
             let controller = sb.instantiateViewController(ofType: MainMenuViewController.self)
             return controller
         }.initCompleted { (r, controller) in
-                let wireframe = r.resolve(MainMenuWireframeInterface.self)!
-                wireframe.viewController = controller
-                wireframe.revelController = r.resolve(SWRevelController.self)
-                let presenter = r.resolve(MainMenuPresenterInterface.self)!
-                controller.presenter = presenter
-                presenter.view = controller
+            let wireframe = r.resolve(MainMenuWireframeInterface.self)!
+            wireframe.viewController = controller
+            wireframe.revelController = r.resolve(SWRevelController.self)
+            let presenter = r.resolve(MainMenuPresenterInterface.self)!
+            controller.presenter = presenter
+            presenter.view = controller
         }
         
         

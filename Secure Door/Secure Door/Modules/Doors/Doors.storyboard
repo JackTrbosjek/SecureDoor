@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Doors View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="DoorsViewController" id="zIc-eW-6fX" customClass="DoorsViewController" customModule="Secure_Door" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oXX-Vo-lYL">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="doorCell" rowHeight="100" id="brF-v1-PGn" customClass="DoorTableViewCell" customModule="Secure_Door" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="brF-v1-PGn" id="EDO-7H-dQe">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Door" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-w8-tRO">
+                                                    <rect key="frame" x="25" y="21" width="309" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0lc-w8-tRO" firstAttribute="leading" secondItem="EDO-7H-dQe" secondAttribute="leadingMargin" constant="10" id="S5c-8e-l5g"/>
+                                                <constraint firstItem="0lc-w8-tRO" firstAttribute="top" secondItem="EDO-7H-dQe" secondAttribute="topMargin" constant="10" id="giD-xR-Jsb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0lc-w8-tRO" secondAttribute="trailing" constant="10" id="pSW-yO-JuW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0lc-w8-tRO" secondAttribute="bottom" constant="10" id="yWj-qf-wgh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="0lc-w8-tRO" id="dAn-v6-eq6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zIc-eW-6fX" id="ZHs-t4-Bxz"/>
+                                    <outlet property="delegate" destination="zIc-eW-6fX" id="dtd-dM-Nzq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oXX-Vo-lYL" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="8" id="5nT-hw-K6D"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="oXX-Vo-lYL" secondAttribute="trailing" constant="8" id="HmV-jF-ek2"/>
+                            <constraint firstItem="oXX-Vo-lYL" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="8" id="XSn-aA-F5f"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="oXX-Vo-lYL" secondAttribute="bottom" constant="8" id="s2s-eh-N6Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="oXX-Vo-lYL" id="wna-Vn-5gM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="303"/>
+        </scene>
+    </scenes>
+</document>

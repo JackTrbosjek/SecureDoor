@@ -13,5 +13,6 @@ class SwinjectInitializer : Initializable {
         let appContainer = AppContainer.build()
         LoginContainer.build(parentContainer: appContainer)
         MainMenuContainer.build(parentContainer: appContainer)
+        DoorsContainer.build(parentContainer: appContainer)
     }
 }

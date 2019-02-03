@@ -16,3 +16,9 @@ class Door : BaseModel {
         super.init(id: id)
     }
 }
+
+extension Door: DoorViewItemInterface {
+    var title: String {
+        return self.name ?? "Missing name"
+    }
+}
