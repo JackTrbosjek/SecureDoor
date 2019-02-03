@@ -38,7 +38,7 @@ class LoginContainer: ChildContainerProtocol {
             let wireframe = r.resolve(LoginWireframeInterface.self)
             wireframe?.viewController = controller
             controller.presenter = r.resolve(LoginPresenterInterface.self)
-            controller.presenter._view = controller
+            controller.presenter.view = controller
         }
         
         instance.register(LoginPresenterInterface.self) { r in

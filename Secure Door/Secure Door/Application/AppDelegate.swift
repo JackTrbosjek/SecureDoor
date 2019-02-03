@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import SWRevealViewController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,10 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appContainer = AppContainer.build()
         let loginContainer = LoginContainer.build(parentContainer: appContainer)
-        
+        let mainContainer = MainMenuContainer.build(parentContainer: appContainer)
+        let userService = appContainer.resolve(UserService.self)!
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        self.window?.rootViewController = loginContainer.resolve(LoginViewController.self)
+        var rootController: UIViewController?
+        if userService.isUserLoggedIn() {
+            let swController = SWRevelController()
+            swController.setFront(UIViewController(), animated: false)
+            swController.setRear(mainContainer.resolve(MainMenuViewController.self), animated: false)
+            rootController = swController
+        } else {
+            rootController = loginContainer.resolve(LoginViewController.self)
+        }
+        self.window?.rootViewController = rootController
         self.window?.makeKeyAndVisible()
         
         return true

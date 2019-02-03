@@ -11,10 +11,10 @@
 import UIKit
 
 final class LoginPresenter {
+    
+    weak var view: LoginViewInterface?
 
     // MARK: - Private properties -
-
-    weak var _view: LoginViewInterface?
     private let _wireframe: LoginWireframeInterface
     private let _interactor: LoginInteractorInterface
 
