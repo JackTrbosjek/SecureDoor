@@ -17,16 +17,27 @@ final class AppContainer: ContainerProtocol {
     
     /// Helper dependency injections
     private static func registerHelpers() {
- 
+        instance.register(CoreDataStack.self) { _ in
+            return CoreDataStackImplementation()
+        }
         
+        instance.register(NSManagedObjectContextProtocol.self) { r in
+            let coreDataStack = r.resolve(CoreDataStack.self)!
+            return coreDataStack.getViewContext()
+        }
     }
+    
     /// Service dependency injections
     private static func registerServices() {
-        // User service
+        
         instance.register(UserService.self) { _ in
             FirebaseUserService()
         }
         
+        instance.register(DoorService.self) { r in
+            let viewContext = r.resolve(NSManagedObjectContextProtocol.self)!
+            return CoreDataDoorService(viewContext: viewContext)
+        }
     }
     
     static func build() -> Container {
