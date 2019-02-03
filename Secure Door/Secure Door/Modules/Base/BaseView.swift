@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SVProgressHUD
 
 protocol ViewInterface: class {
     func showProgress()
@@ -16,10 +17,10 @@ protocol ViewInterface: class {
 extension ViewInterface {
     
     func showProgress() {
-        //SVProgressHUD.show()
+        SVProgressHUD.show()
     }
     
     func hideProgress() {
-        //SVProgressHUD.dismiss()
+        SVProgressHUD.dismiss()
     }
 }

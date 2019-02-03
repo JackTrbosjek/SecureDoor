@@ -16,8 +16,9 @@ class MainMenuContainer: ChildContainerProtocol {
     
     static var instance: Container!
     
+    @discardableResult
     static func build(parentContainer: Container) -> Container {
-        instance = Container(parent: parentContainer, defaultObjectScope: .container)
+        instance = Container(parent: parentContainer, defaultObjectScope: .transient)
         
         instance.register(MainMenuInteractorInterface.self) { r in
             MainMenuInteractor(userService: r.resolve(UserService.self)!)
@@ -25,7 +26,7 @@ class MainMenuContainer: ChildContainerProtocol {
         
         instance.register(MainMenuWireframeInterface.self) { r in
             MainMenuWireframe()
-        }
+        }.inObjectScope(.container)
         
         instance.register(MainMenuViewInterface.self) { r in
             r.resolve(MainMenuViewController.self)!

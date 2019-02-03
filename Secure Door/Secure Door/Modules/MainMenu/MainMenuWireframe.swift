@@ -57,6 +57,6 @@ extension MainMenuWireframe: MainMenuWireframeInterface {
     
     private func navigateToLogin() {
         let loginController = LoginContainer.instance.resolve(LoginViewController.self)!
-        AppDelegate.getInstance().window?.rootViewController = loginController
+        UIApplication.shared.keyWindow?.rootViewController = loginController
     }
 }

@@ -11,6 +11,7 @@ target 'Secure Door' do
   pod 'Swinject'
   pod 'SwinjectStoryboard'
   pod 'SWRevealViewController'
+  pod 'SVProgressHUD'
 
   target 'Secure DoorTests' do
     inherit! :search_paths

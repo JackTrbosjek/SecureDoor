@@ -34,7 +34,9 @@ extension LoginPresenter: LoginPresenterInterface {
         guard let username = username, let password = password else {
             return
         }
+        view?.showProgress()
         _interactor.loginUser(username: username, password: password) { [weak self] (result) in
+            self?.view?.hideProgress()
             switch(result){
             case let .Success(success):
                 if success {

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Firebase
 import SWRevealViewController
 
 @UIApplicationMain
@@ -16,30 +15,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    static func getInstance() -> AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
-    }
+    lazy var initializers: [Initializable] = [
+        SwinjectInitializer(),
+        ProgressHudInitializer(),
+        FirebaseInitializer()
+    ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+        initializers.forEach { $0.performInitialization() }
         
-        let appContainer = AppContainer.build()
-        let loginContainer = LoginContainer.build(parentContainer: appContainer)
-        let mainContainer = MainMenuContainer.build(parentContainer: appContainer)
-        let userService = appContainer.resolve(UserService.self)!
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        var rootController: UIViewController?
-        if userService.isUserLoggedIn() {
-            rootController = appContainer.resolve(SWRevelController.self)
-        } else {
-            rootController = loginContainer.resolve(LoginViewController.self)
-        }
-        self.window?.rootViewController = rootController
+        
+        self.window?.rootViewController = getRootController()
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    private func getRootController() -> UIViewController? {
+        let userService = AppContainer.instance.resolve(UserService.self)!
+        var rootController: UIViewController?
+        if userService.isUserLoggedIn() {
+            rootController = AppContainer.instance.resolve(SWRevelController.self)
+        } else {
+            rootController = LoginContainer.instance.resolve(LoginViewController.self)
+        }
+        return rootController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

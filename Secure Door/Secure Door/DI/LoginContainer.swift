@@ -16,6 +16,7 @@ class LoginContainer: ChildContainerProtocol {
     
     static var instance: Container!
     
+    @discardableResult
     static func build(parentContainer: Container) -> Container {
         instance = Container(parent: parentContainer, defaultObjectScope: .transient)
         
@@ -25,7 +26,7 @@ class LoginContainer: ChildContainerProtocol {
         
         instance.register(LoginWireframeInterface.self) { r in
             LoginWireframe()
-        }
+        }.inObjectScope(.container)
         
         instance.register(LoginViewInterface.self) { r in
             r.resolve(LoginViewController.self)!
