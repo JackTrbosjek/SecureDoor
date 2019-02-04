@@ -8,7 +8,10 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="CoreEvent" representedClassName="CoreEvent" parentEntity="CoreEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="allowed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="door" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDoor" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreUser" syncable="YES"/>
     </entity>
     <entity name="CoreUser" representedClassName="CoreUser" parentEntity="CoreEntity" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +21,7 @@
     <elements>
         <element name="CoreDoor" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="CoreEntity" positionX="-54" positionY="0" width="128" height="60"/>
-        <element name="CoreEvent" positionX="-18" positionY="45" width="128" height="60"/>
+        <element name="CoreEvent" positionX="-18" positionY="45" width="128" height="105"/>
         <element name="CoreUser" positionX="-36" positionY="18" width="128" height="90"/>
     </elements>
 </model>

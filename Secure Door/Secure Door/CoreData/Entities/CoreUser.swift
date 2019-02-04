@@ -24,7 +24,7 @@ extension Array where Element: CoreUser {
     }
 }
 
-extension NSSet{
+extension NSSet {
     func toUserArray()->[User] {
         let coreUsers = self.allObjects as! [CoreUser]
         return coreUsers.toUserArray()

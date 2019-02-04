@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol AdminUserService {
+protocol AdminUserService: class {
     func addInitialUserInfo()
 }

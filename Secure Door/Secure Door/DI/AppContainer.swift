@@ -66,5 +66,10 @@ final class AppContainer: ContainerProtocol {
             let viewContext = r.resolve(NSManagedObjectContextProtocol.self)!
             return CoreDataAdminUserService(viewContext: viewContext)
         }
+        
+        instance.register(EventService.self) { r in
+            let viewContext = r.resolve(NSManagedObjectContextProtocol.self)!
+            return CoreDataEventService(viewContext: viewContext)
+        }
     }
 }

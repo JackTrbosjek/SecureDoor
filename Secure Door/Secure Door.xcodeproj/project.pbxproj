@@ -12,6 +12,10 @@
 		4C0F5B392208C995007F2424 /* AdminUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B382208C995007F2424 /* AdminUserService.swift */; };
 		4C0F5B3B2208C9C8007F2424 /* CoreDataAdminUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B3A2208C9C8007F2424 /* CoreDataAdminUserService.swift */; };
 		4C0F5B3D2208D29D007F2424 /* CoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B3C2208D29D007F2424 /* CoreUser.swift */; };
+		4C0F5B3F2208E3F8007F2424 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B3E2208E3F8007F2424 /* EventService.swift */; };
+		4C0F5B412208E416007F2424 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B402208E416007F2424 /* Event.swift */; };
+		4C0F5B432208E584007F2424 /* CoreDataEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B422208E584007F2424 /* CoreDataEventService.swift */; };
+		4C0F5B452208E678007F2424 /* CoreEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B442208E678007F2424 /* CoreEvent.swift */; };
 		4C122E6722061F1D000569BD /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C122E6122061F1D000569BD /* MainMenu.storyboard */; };
 		4C122E6822061F1D000569BD /* MainMenuInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6222061F1D000569BD /* MainMenuInterfaces.swift */; };
 		4C122E6922061F1D000569BD /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6322061F1D000569BD /* MainMenuPresenter.swift */; };
@@ -87,6 +91,10 @@
 		4C0F5B382208C995007F2424 /* AdminUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserService.swift; sourceTree = "<group>"; };
 		4C0F5B3A2208C9C8007F2424 /* CoreDataAdminUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAdminUserService.swift; sourceTree = "<group>"; };
 		4C0F5B3C2208D29D007F2424 /* CoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreUser.swift; sourceTree = "<group>"; };
+		4C0F5B3E2208E3F8007F2424 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		4C0F5B402208E416007F2424 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4C0F5B422208E584007F2424 /* CoreDataEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEventService.swift; sourceTree = "<group>"; };
+		4C0F5B442208E678007F2424 /* CoreEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEvent.swift; sourceTree = "<group>"; };
 		4C122E6122061F1D000569BD /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 		4C122E6222061F1D000569BD /* MainMenuInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuInterfaces.swift; sourceTree = "<group>"; };
 		4C122E6322061F1D000569BD /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
@@ -324,6 +332,7 @@
 				4CF439A8220772A70025C392 /* Door.swift */,
 				4CF439AA220773140025C392 /* User.swift */,
 				4CF439B42207765B0025C392 /* BaseModel.swift */,
+				4C0F5B402208E416007F2424 /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 				4C229A2022059B5E0031E60F /* UserService.swift */,
 				4CF439AF220774920025C392 /* DoorService.swift */,
 				4C0F5B382208C995007F2424 /* AdminUserService.swift */,
+				4C0F5B3E2208E3F8007F2424 /* EventService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -401,6 +411,7 @@
 			children = (
 				4CF439AD220773B20025C392 /* CoreDore.swift */,
 				4C0F5B3C2208D29D007F2424 /* CoreUser.swift */,
+				4C0F5B442208E678007F2424 /* CoreEvent.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -410,6 +421,7 @@
 			children = (
 				4CF439B22207751E0025C392 /* CoreDataDoorService.swift */,
 				4C0F5B3A2208C9C8007F2424 /* CoreDataAdminUserService.swift */,
+				4C0F5B422208E584007F2424 /* CoreDataEventService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -622,6 +634,7 @@
 				4C122E70220621BC000569BD /* SWRevelController.swift in Sources */,
 				4CF439B0220774920025C392 /* DoorService.swift in Sources */,
 				4CF439B32207751E0025C392 /* CoreDataDoorService.swift in Sources */,
+				4C0F5B452208E678007F2424 /* CoreEvent.swift in Sources */,
 				4C122E6E22061FEC000569BD /* MainMenuContainer.swift in Sources */,
 				4C229A1922059B240031E60F /* LoginViewController.swift in Sources */,
 				4CF439C222077DA50025C392 /* DoorsWireframe.swift in Sources */,
@@ -635,7 +648,10 @@
 				4C2299F82205964F0031E60F /* BasePresenter.swift in Sources */,
 				4CF439C5220782510025C392 /* DoorTableViewCell.swift in Sources */,
 				4C2299F52205964F0031E60F /* BaseInteractor.swift in Sources */,
+				4C0F5B432208E584007F2424 /* CoreDataEventService.swift in Sources */,
+				4C0F5B412208E416007F2424 /* Event.swift in Sources */,
 				4C229A1B22059B240031E60F /* LoginPresenter.swift in Sources */,
+				4C0F5B3F2208E3F8007F2424 /* EventService.swift in Sources */,
 				4C229A2622059E160031E60F /* Result.swift in Sources */,
 				4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */,
 				4CF439BF22077DA50025C392 /* DoorsPresenter.swift in Sources */,
