@@ -132,3 +132,10 @@ class CoreDataStackImplementation: CoreDataStack {
         }
     }
 }
+
+struct CoreError: Error, LocalizedError {
+    var errorDescription: String? {
+        return message
+    }
+    var message = ""
+}

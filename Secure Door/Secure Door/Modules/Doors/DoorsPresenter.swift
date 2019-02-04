@@ -51,7 +51,21 @@ extension DoorsPresenter: DoorsPresenterInterface {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        
+        let door = _items[indexPath.row]
+        let result = _interactor.isUserAllowedToOpenDoor(doorId: door.id!)
+        switch result {
+        case let .Success(isAllowed):
+            presentUserAllowedDialog(isAllowed: isAllowed)
+        case let .Error(error):
+            _wireframe.showErrorAlert(with: error.localizedDescription)
+        }
     }
     
+    private func presentUserAllowedDialog(isAllowed: Bool) {
+        if isAllowed {
+            _wireframe.showAlert(with: "SUCCESS", message: "Door opened!")
+        } else {
+            _wireframe.showAlert(with: "DENIED", message: "You don't have permissions to open this door.")
+        }
+    }
 }

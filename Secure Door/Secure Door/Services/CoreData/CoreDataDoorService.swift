@@ -24,6 +24,21 @@ class CoreDataDoorService: DoorService {
         }
     }
     
+    func getDoor(withId id: UUID) -> Result<Door> {
+        do {
+            let predicate = NSPredicate(format: "id = %@", id.uuidString)
+            let door = try viewContext.getEntity(withType: CoreDoor.self, predicate: predicate)
+            if let door = door {
+                return .Success(door.door)
+            } else {
+                return .Error(CoreError(message: "Door with specified id doesn't exist"))
+            }
+            
+        } catch {
+            return .Error(error)
+        }
+    }
+    
     func addInitialDoorsIfNeeded() {
         do {
             let count = try viewContext.countNumberOfEntities(withType: CoreDoor.self)

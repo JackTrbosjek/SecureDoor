@@ -11,9 +11,11 @@ import Foundation
 final class DoorsInteractor {
     // MARK: - Private properties
     private let _doorService: DoorService
+    private let _userService: UserService
     
-    init(doorService: DoorService) {
+    init(doorService: DoorService, userService: UserService) {
         _doorService = doorService
+        _userService = userService
     }
 }
 
@@ -24,4 +26,25 @@ extension DoorsInteractor: DoorsInteractorInterface {
         return _doorService.getDoors()
     }
     
+    func isUserAllowedToOpenDoor(doorId: UUID) -> Result<Bool> {
+        guard !_userService.isAdminUser() else { // admin is allowed to open any door
+            return .Success(true)
+        }
+        let result = _doorService.getDoor(withId: doorId)
+        switch result {
+        case let .Success(door):
+            return .Success(checkIsUserAllowedToAccessDoor(door: door))
+        case let .Error(error):
+            return .Error(error)
+        }
+    }
+    
+    private func checkIsUserAllowedToAccessDoor(door: Door) -> Bool{
+        guard let currentUserId = _userService.getCurrentUserId() else {
+            return false
+        }
+        return door.users.contains { (user) -> Bool in
+            user.firebaseId == currentUserId
+        }
+    }
 }

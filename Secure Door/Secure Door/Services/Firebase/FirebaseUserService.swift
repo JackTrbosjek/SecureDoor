@@ -17,6 +17,7 @@ class FirebaseUserService : UserService {
     lazy var auth: Auth = {
        return Auth.auth()
     }()
+    
     func loginUser(email: String, password: String, completion: @escaping (Result<Bool>) -> Void) {
         auth.signIn(withEmail: email, password: password) { (data, error) in
             if data?.user != nil {
@@ -34,6 +35,10 @@ class FirebaseUserService : UserService {
     
     func getCurrentUserEmail() -> String? {
         return auth.currentUser?.email
+    }
+    
+    func getCurrentUserId() -> String? {
+        return auth.currentUser?.uid
     }
     
     func isAdminUser() -> Bool {

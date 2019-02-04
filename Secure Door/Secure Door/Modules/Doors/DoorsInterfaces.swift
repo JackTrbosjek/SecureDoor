@@ -28,6 +28,7 @@ protocol DoorsPresenterInterface: PresenterInterface {
 
 protocol DoorsInteractorInterface: InteractorInterface {
     func getDoors() -> Result<[Door]>
+    func isUserAllowedToOpenDoor(doorId: UUID) -> Result<Bool>
 }
 
 protocol DoorViewItemInterface {
