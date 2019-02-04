@@ -10,11 +10,15 @@ import Foundation
 import Swinject
 import SwinjectStoryboard
 
-class LoginContainer: ChildContainerProtocol {
+final class LoginContainer: ChildContainerProtocol {
     
     private init(){}
     
-    static var instance: Container!
+    private static var instance: Container!
+    
+    static func buildController() -> LoginViewController {
+        return instance.resolve(LoginViewController.self)!
+    }
     
     @discardableResult
     static func build(parentContainer: Container) -> Container {
@@ -24,8 +28,8 @@ class LoginContainer: ChildContainerProtocol {
             LoginInteractor(userService: r.resolve(UserService.self)!)
         }
         
-        instance.register(LoginWireframeInterface.self) { r in
-            LoginWireframe()
+        instance.register(LoginWireframeInterface.self) { (r, viewController: LoginViewController) in
+            LoginWireframe(controller: viewController)
         }
         
         instance.register(LoginViewInterface.self) { r in
@@ -34,19 +38,15 @@ class LoginContainer: ChildContainerProtocol {
         
         instance.register(LoginViewController.self) { r in
             let sb = SwinjectStoryboard.create(name: "Login", bundle: nil, container: r)
-            let controller = sb.instantiateViewController(ofType: LoginViewController.self)
-            return controller
+            return sb.instantiateViewController(ofType: LoginViewController.self)
         }
         
         instance.storyboardInitCompleted(LoginViewController.self) { (r, controller) in
-            let wireframe = r.resolve(LoginWireframeInterface.self)!
-            wireframe.viewController = controller
-            controller.presenter = r.resolve(LoginPresenterInterface.self)
-            controller.presenter.view = controller
+            controller.presenter = r.resolve(LoginPresenterInterface.self, argument: controller)
         }
         
-        instance.register(LoginPresenterInterface.self) { r in
-            LoginPresenter(wireframe: r.resolve(LoginWireframeInterface.self)!, interactor: r.resolve(LoginInteractorInterface.self)!)
+        instance.register(LoginPresenterInterface.self) { (r, viewController: LoginViewController) in
+            LoginPresenter(wireframe: r.resolve(LoginWireframeInterface.self, argument: viewController)!, view: viewController, interactor: r.resolve(LoginInteractorInterface.self)!)
         }
         
         return instance

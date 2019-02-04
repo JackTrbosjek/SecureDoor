@@ -13,7 +13,30 @@ final class AppContainer: ContainerProtocol {
     
     private init(){}
     
-    static var instance: Container!
+    private static var instance: Container!
+    
+    static func resolve<Service>(_ serviceType: Service.Type) -> Service? {
+        return instance.resolve(serviceType)
+    }
+    
+    static func resolveSwRevelController(menuController: MainMenuViewController, mainController: UIViewController) -> SWRevelController {
+        return instance.resolve(SWRevelController.self, arguments: menuController, mainController)!
+    }
+    
+    static func build() -> Container {
+        instance = Container(defaultObjectScope: .container)
+        registerHelpers()
+        registerServices()
+        
+        instance.register(SWRevelController.self) { (r, menuController: MainMenuViewController, mainController: UIViewController) in
+            let revelController = SWRevelController()
+            revelController.setMenuController(menuController)
+            revelController.setMainController(mainController)
+            return revelController
+        }.inObjectScope(.graph)
+        
+        return instance
+    }
     
     /// Helper dependency injections
     private static func registerHelpers() {
@@ -39,14 +62,4 @@ final class AppContainer: ContainerProtocol {
             return CoreDataDoorService(viewContext: viewContext)
         }
     }
-    
-    static func build() -> Container {
-        // Automatically defines all registered dependencies as singletons
-        instance = Container(defaultObjectScope: .container)
-        registerHelpers()
-        registerServices()
-        
-        return instance
-    }
-    
 }

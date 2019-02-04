@@ -10,23 +10,23 @@ import UIKit
 
 final class DoorsPresenter {
 
-    weak var view: DoorsViewInterface?
-    
     // MARK: - Private properties -
+    private weak var _view: DoorsViewInterface?
     private let _wireframe: DoorsWireframeInterface
     private let _interactor: DoorsInteractorInterface
     
     private var _items: [Door] = [] {
         didSet {
-            view?.reloadData()
+            _view?.reloadData()
         }
     }
 
     // MARK: - Lifecycle -
 
-    init(wireframe: DoorsWireframeInterface, interactor: DoorsInteractorInterface) {
+    init(wireframe: DoorsWireframeInterface, view: DoorsViewInterface, interactor: DoorsInteractorInterface) {
         _wireframe = wireframe
         _interactor = interactor
+        _view = view
     }
 }
 

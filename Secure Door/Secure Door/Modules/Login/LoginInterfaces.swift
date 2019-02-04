@@ -20,7 +20,6 @@ protocol LoginViewInterface: ViewInterface {
 }
 
 protocol LoginPresenterInterface: PresenterInterface {
-    var view:LoginViewInterface? { get set }
     func loginAction(username: String?, password: String?)
 }
 

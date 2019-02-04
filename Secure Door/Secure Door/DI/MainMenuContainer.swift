@@ -14,7 +14,11 @@ class MainMenuContainer: ChildContainerProtocol {
     
     private init(){}
     
-    static var instance: Container!
+    private static var instance: Container!
+    
+    static func buildController() -> MainMenuViewController {
+        return instance.resolve(MainMenuViewController.self)!
+    }
     
     @discardableResult
     static func build(parentContainer: Container) -> Container {
@@ -24,41 +28,25 @@ class MainMenuContainer: ChildContainerProtocol {
             MainMenuInteractor(userService: r.resolve(UserService.self)!)
         }
         
-        instance.register(MainMenuWireframeInterface.self) { r in
-            let wireframe = MainMenuWireframe()
-            
-            return wireframe
+        instance.register(MainMenuWireframeInterface.self) { (r, viewController: MainMenuViewController)  in
+            MainMenuWireframe(controller: viewController)
         }
         
         instance.register(MainMenuViewInterface.self) { r in
             r.resolve(MainMenuViewController.self)!
         }
         
-        instance.register(SWRevelController.self) { r in
-            let revelController = SWRevelController()
-            let menuController = r.resolve(MainMenuViewController.self)!
-            let doorsController = DoorsContainer.instance.resolve(DoorsViewController.self)!
-            revelController.setMenuController(menuController)
-            revelController.setMainController(doorsController)
-            return revelController
-        }
-        
         instance.register(MainMenuViewController.self) { r in
             let sb = SwinjectStoryboard.create(name: "MainMenu", bundle: nil, container: r)
-            let controller = sb.instantiateViewController(ofType: MainMenuViewController.self)
-            return controller
-        }.initCompleted { (r, controller) in
-            let wireframe = r.resolve(MainMenuWireframeInterface.self)!
-            wireframe.viewController = controller
-            wireframe.revelController = r.resolve(SWRevelController.self)
-            let presenter = r.resolve(MainMenuPresenterInterface.self)!
-            controller.presenter = presenter
-            presenter.view = controller
+            return sb.instantiateViewController(ofType: MainMenuViewController.self)
         }
         
+        instance.storyboardInitCompleted(MainMenuViewController.self) { (r, controller) in
+            controller.presenter = r.resolve(MainMenuPresenterInterface.self, argument: controller)!
+        }
         
-        instance.register(MainMenuPresenterInterface.self) { r in
-            MainMenuPresenter(wireframe: r.resolve(MainMenuWireframeInterface.self)!, interactor: r.resolve(MainMenuInteractorInterface.self)!)
+        instance.register(MainMenuPresenterInterface.self) { (r, viewController: MainMenuViewController) in
+            MainMenuPresenter(wireframe: r.resolve(MainMenuWireframeInterface.self, argument: viewController)!, view: viewController, interactor: r.resolve(MainMenuInteractorInterface.self)!)
         }
         
         return instance

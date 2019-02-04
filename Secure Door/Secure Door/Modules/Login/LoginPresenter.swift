@@ -10,17 +10,19 @@ import UIKit
 
 final class LoginPresenter {
     
-    weak var view: LoginViewInterface?
+    
 
     // MARK: - Private properties -
+    private weak var _view: LoginViewInterface?
     private let _wireframe: LoginWireframeInterface
     private let _interactor: LoginInteractorInterface
 
     // MARK: - Lifecycle -
 
-    init(wireframe: LoginWireframeInterface, interactor: LoginInteractorInterface) {
+    init(wireframe: LoginWireframeInterface, view: LoginViewInterface, interactor: LoginInteractorInterface) {
         _wireframe = wireframe
         _interactor = interactor
+        _view = view
     }
 }
 
@@ -32,9 +34,9 @@ extension LoginPresenter: LoginPresenterInterface {
         guard let username = username, let password = password else {
             return
         }
-        view?.showProgress()
+        _view?.showProgress()
         _interactor.loginUser(username: username, password: password) { [weak self] (result) in
-            self?.view?.hideProgress()
+            self?._view?.hideProgress()
             switch(result){
             case let .Success(success):
                 if success {

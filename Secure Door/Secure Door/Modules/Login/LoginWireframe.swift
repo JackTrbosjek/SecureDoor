@@ -11,25 +11,22 @@ import UIKit
 final class LoginWireframe {
 
     // MARK: - Private properties -
-    private var loginViewController: LoginViewController?
+    private weak var loginViewController: LoginViewController?
+    
+    init(controller: LoginViewController) {
+        loginViewController = controller
+    }
 }
 
 // MARK: - Extensions -
 
 extension LoginWireframe: LoginWireframeInterface {
     var viewController: UIViewController? {
-        get {
-            return loginViewController
-        }
-        set {
-            loginViewController = newValue as? LoginViewController
-        }
+        return loginViewController
     }
     
     var navigationController: UINavigationController? {
-        get {
-            return viewController?.navigationController
-        }
+        return viewController?.navigationController
     }
     
 
@@ -41,7 +38,9 @@ extension LoginWireframe: LoginWireframeInterface {
     }
     
     private func navigateToHome() {
-        let homeController = MainMenuContainer.instance.resolve(SWRevelController.self)!
+        let menuController = MainMenuContainer.buildController()
+        let doorsController = DoorsContainer.buildController()
+        let homeController = AppContainer.resolveSwRevelController(menuController: menuController, mainController: doorsController)
         UIApplication.shared.keyWindow?.rootViewController = homeController
     }
 }

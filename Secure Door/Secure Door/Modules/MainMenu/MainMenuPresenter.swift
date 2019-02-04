@@ -10,17 +10,17 @@ import UIKit
 
 final class MainMenuPresenter {
 
-    weak var view: MainMenuViewInterface?
-    
     // MARK: - Private properties -
+    private weak var _view: MainMenuViewInterface?
     private let _wireframe: MainMenuWireframeInterface
     private let _interactor: MainMenuInteractorInterface
 
     // MARK: - Lifecycle -
 
-    init(wireframe: MainMenuWireframeInterface, interactor: MainMenuInteractorInterface) {
+    init(wireframe: MainMenuWireframeInterface, view: MainMenuViewInterface, interactor: MainMenuInteractorInterface) {
         _wireframe = wireframe
         _interactor = interactor
+        _view = view
     }
 }
 
@@ -30,9 +30,9 @@ extension MainMenuPresenter: MainMenuPresenterInterface {
     
     func viewDidLoad() {
         let email = _interactor.getUserEmail()
-        view?.setUserEmail(email: email!)
+        _view?.setUserEmail(email: email!)
         if _interactor.isAdmin() {
-            view?.showUsersButton()
+            _view?.showUsersButton()
         }
     }
     

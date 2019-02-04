@@ -11,7 +11,11 @@ import UIKit
 final class DoorsWireframe {
 
     // MARK: - Private properties -
-    private var doorsViewController: DoorsViewController?
+    private weak var doorsViewController: DoorsViewController?
+    
+    init(controller: DoorsViewController) {
+        doorsViewController = controller
+    }
 }
 
 // MARK: - Extensions -

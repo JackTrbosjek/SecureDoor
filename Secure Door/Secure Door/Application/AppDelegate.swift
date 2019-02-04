@@ -33,12 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func getRootController() -> UIViewController? {
-        let userService = AppContainer.instance.resolve(UserService.self)!
+        let userService = AppContainer.resolve(UserService.self)!
         var rootController: UIViewController?
         if userService.isUserLoggedIn() {
-            rootController = MainMenuContainer.instance.resolve(SWRevelController.self)
+            let menuController = MainMenuContainer.buildController()
+            let doorsController = DoorsContainer.buildController()
+            rootController = AppContainer.resolveSwRevelController(menuController: menuController, mainController: doorsController)
         } else {
-            rootController = LoginContainer.instance.resolve(LoginViewController.self)
+            rootController = LoginContainer.buildController()
         }
         return rootController
     }
@@ -64,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        AppContainer.instance.resolve(CoreDataStack.self)?.saveContext()
+        AppContainer.resolve(CoreDataStack.self)?.saveContext()
     }
 }
 

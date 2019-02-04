@@ -14,7 +14,11 @@ class DoorsContainer: ChildContainerProtocol {
     
     private init(){}
     
-    static var instance: Container!
+    private static var instance: Container!
+    
+    static func buildController() -> DoorsViewController {
+        return instance.resolve(DoorsViewController.self)!
+    }
     
     @discardableResult
     static func build(parentContainer: Container) -> Container {
@@ -24,10 +28,8 @@ class DoorsContainer: ChildContainerProtocol {
             DoorsInteractor(doorService: r.resolve(DoorService.self)!)
         }
         
-        instance.register(DoorsWireframeInterface.self) { r in
-            let wireframe = DoorsWireframe()
-            
-            return wireframe
+        instance.register(DoorsWireframeInterface.self) { (r, viewController: DoorsViewController) in
+            DoorsWireframe(controller: viewController)
         }
         
         instance.register(DoorsViewInterface.self) { r in
@@ -36,19 +38,15 @@ class DoorsContainer: ChildContainerProtocol {
         
         instance.register(DoorsViewController.self) { r in
             let sb = SwinjectStoryboard.create(name: "Doors", bundle: nil, container: r)
-            let controller = sb.instantiateViewController(ofType: DoorsViewController.self)
-            return controller
-            }.initCompleted { (r, controller) in
-                let wireframe = r.resolve(DoorsWireframeInterface.self)!
-                wireframe.viewController = controller
-                let presenter = r.resolve(DoorsPresenterInterface.self)!
-                controller.presenter = presenter
-                presenter.view = controller
+            return sb.instantiateViewController(ofType: DoorsViewController.self)
         }
         
+        instance.storyboardInitCompleted(DoorsViewController.self) { (r, controller) in
+            controller.presenter = r.resolve(DoorsPresenterInterface.self, argument: controller)!
+        }
         
-        instance.register(DoorsPresenterInterface.self) { r in
-            DoorsPresenter(wireframe: r.resolve(DoorsWireframeInterface.self)!, interactor: r.resolve(DoorsInteractorInterface.self)!)
+        instance.register(DoorsPresenterInterface.self) { (r, viewController: DoorsViewController) in
+            DoorsPresenter(wireframe: r.resolve(DoorsWireframeInterface.self, argument: viewController)!, view: viewController, interactor: r.resolve(DoorsInteractorInterface.self)!)
         }
         
         return instance

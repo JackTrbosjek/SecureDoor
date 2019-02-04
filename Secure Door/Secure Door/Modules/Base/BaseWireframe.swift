@@ -10,7 +10,7 @@ import Foundation
 import SafariServices
 
 protocol WireframeInterface: class {
-    var viewController: UIViewController? { get set }
+    var viewController: UIViewController? { get }
     var navigationController: UINavigationController? { get }
     
     func popFromNavigationController(animated: Bool)

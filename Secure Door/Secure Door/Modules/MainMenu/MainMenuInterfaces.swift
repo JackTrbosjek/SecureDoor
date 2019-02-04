@@ -13,7 +13,6 @@ enum MainMenuNavigationOption {
 }
 
 protocol MainMenuWireframeInterface: WireframeInterface {
-    var revelController: SWRevelController? { get set }
     func navigate(to option: MainMenuNavigationOption)
 }
 
@@ -24,7 +23,6 @@ protocol MainMenuViewInterface: ViewInterface {
 }
 
 protocol MainMenuPresenterInterface: PresenterInterface {
-    var view:MainMenuViewInterface? { get set }
     func doorsAction()
     func eventsAction()
     func usersAction()

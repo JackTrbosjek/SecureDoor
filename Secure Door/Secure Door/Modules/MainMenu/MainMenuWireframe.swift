@@ -11,29 +11,22 @@ import UIKit
 final class MainMenuWireframe {
 
     // MARK: - Private properties -
-    private var mainMenuViewController: MainMenuViewController?
-    private var revelViewController: SWRevelController?
+    private weak var mainMenuViewController: MainMenuViewController?
+    private var revelViewController: SWRevelController? {
+        return mainMenuViewController?.parent as? SWRevelController
+    }
+    
+    init(controller: MainMenuViewController) {
+        mainMenuViewController = controller
+    }
 }
 
 // MARK: - Extensions -
 
 extension MainMenuWireframe: MainMenuWireframeInterface {
-    var revelController: SWRevelController? {
-        get {
-            return revelViewController
-        }
-        set {
-            revelViewController = newValue
-        }
-    }
     
     var viewController: UIViewController? {
-        get {
             return mainMenuViewController
-        }
-        set {
-            mainMenuViewController = newValue as? MainMenuViewController
-        }
     }
     
     var navigationController: UINavigationController? {
@@ -50,16 +43,16 @@ extension MainMenuWireframe: MainMenuWireframeInterface {
         default:
             break
         }
-        revelController?.revealToggle(animated: true)
+        revelViewController?.revealToggle(animated: true)
     }
     
     private func presentDoors() {
-        let controller = DoorsContainer.instance.resolve(DoorsViewController.self)!
-        revelController?.setMainController(controller)
+        let controller = DoorsContainer.buildController()
+        revelViewController?.setMainController(controller)
     }
     
     private func navigateToLogin() {
-        let loginController = LoginContainer.instance.resolve(LoginViewController.self)!
+        let loginController = LoginContainer.buildController()
         UIApplication.shared.keyWindow?.rootViewController = loginController
     }
 }
