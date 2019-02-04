@@ -10,4 +10,5 @@ import Foundation
 
 protocol DoorService : class {
     func getDoors() -> Result<[Door]>
+    func addInitialDoorsIfNeeded()
 }

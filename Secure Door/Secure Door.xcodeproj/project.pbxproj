@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2647767EC62DC897E77F30A7 /* Pods_Secure_DoorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A12A9650C26961958251A57 /* Pods_Secure_DoorTests.framework */; };
+		4C0F5B372208C85F007F2424 /* CoreDataInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B362208C85F007F2424 /* CoreDataInitializer.swift */; };
+		4C0F5B392208C995007F2424 /* AdminUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B382208C995007F2424 /* AdminUserService.swift */; };
+		4C0F5B3B2208C9C8007F2424 /* CoreDataAdminUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B3A2208C9C8007F2424 /* CoreDataAdminUserService.swift */; };
+		4C0F5B3D2208D29D007F2424 /* CoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0F5B3C2208D29D007F2424 /* CoreUser.swift */; };
 		4C122E6722061F1D000569BD /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C122E6122061F1D000569BD /* MainMenu.storyboard */; };
 		4C122E6822061F1D000569BD /* MainMenuInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6222061F1D000569BD /* MainMenuInterfaces.swift */; };
 		4C122E6922061F1D000569BD /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6322061F1D000569BD /* MainMenuPresenter.swift */; };
@@ -79,6 +83,10 @@
 		1A12A9650C26961958251A57 /* Pods_Secure_DoorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Secure_DoorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5603C1E62E4DF56C3ADC6A /* Pods_Secure_Door.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Secure_Door.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40864D784103B6D016D17A85 /* Pods-Secure Door.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Secure Door.release.xcconfig"; path = "Pods/Target Support Files/Pods-Secure Door/Pods-Secure Door.release.xcconfig"; sourceTree = "<group>"; };
+		4C0F5B362208C85F007F2424 /* CoreDataInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInitializer.swift; sourceTree = "<group>"; };
+		4C0F5B382208C995007F2424 /* AdminUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserService.swift; sourceTree = "<group>"; };
+		4C0F5B3A2208C9C8007F2424 /* CoreDataAdminUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAdminUserService.swift; sourceTree = "<group>"; };
+		4C0F5B3C2208D29D007F2424 /* CoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreUser.swift; sourceTree = "<group>"; };
 		4C122E6122061F1D000569BD /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 		4C122E6222061F1D000569BD /* MainMenuInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuInterfaces.swift; sourceTree = "<group>"; };
 		4C122E6322061F1D000569BD /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
@@ -351,6 +359,7 @@
 				4C229A2222059C000031E60F /* Firebase */,
 				4C229A2022059B5E0031E60F /* UserService.swift */,
 				4CF439AF220774920025C392 /* DoorService.swift */,
+				4C0F5B382208C995007F2424 /* AdminUserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -382,6 +391,7 @@
 				4CF4399C220743610025C392 /* SwinjectInitializer.swift */,
 				4CF4399E2207444B0025C392 /* ProgressHudInitializer.swift */,
 				4CF439A0220744900025C392 /* FirebaseInitializer.swift */,
+				4C0F5B362208C85F007F2424 /* CoreDataInitializer.swift */,
 			);
 			path = Initializers;
 			sourceTree = "<group>";
@@ -390,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF439AD220773B20025C392 /* CoreDore.swift */,
+				4C0F5B3C2208D29D007F2424 /* CoreUser.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -398,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF439B22207751E0025C392 /* CoreDataDoorService.swift */,
+				4C0F5B3A2208C9C8007F2424 /* CoreDataAdminUserService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -627,10 +639,12 @@
 				4C229A2622059E160031E60F /* Result.swift in Sources */,
 				4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */,
 				4CF439BF22077DA50025C392 /* DoorsPresenter.swift in Sources */,
+				4C0F5B372208C85F007F2424 /* CoreDataInitializer.swift in Sources */,
 				4C229A2422059C090031E60F /* FirebaseUserService.swift in Sources */,
 				4C229A1C22059B240031E60F /* LoginInterfaces.swift in Sources */,
 				4CF4399F2207444B0025C392 /* ProgressHudInitializer.swift in Sources */,
 				4C122E6C22061F1D000569BD /* MainMenuWireframe.swift in Sources */,
+				4C0F5B392208C995007F2424 /* AdminUserService.swift in Sources */,
 				4C2299F62205964F0031E60F /* BaseView.swift in Sources */,
 				4CF439A9220772A70025C392 /* Door.swift in Sources */,
 				4CF439BE22077DA50025C392 /* DoorsInterfaces.swift in Sources */,
@@ -639,9 +653,11 @@
 				4C229A0D220596FB0031E60F /* UIStoryboardExtension.swift in Sources */,
 				4C2299F72205964F0031E60F /* BaseWireframe.swift in Sources */,
 				4C2299CD2205957F0031E60F /* AppDelegate.swift in Sources */,
+				4C0F5B3B2208C9C8007F2424 /* CoreDataAdminUserService.swift in Sources */,
 				4C229A1A22059B240031E60F /* LoginInteractor.swift in Sources */,
 				4C122E6822061F1D000569BD /* MainMenuInterfaces.swift in Sources */,
 				4C229A09220596DD0031E60F /* SecureDoorNavigationController.swift in Sources */,
+				4C0F5B3D2208D29D007F2424 /* CoreUser.swift in Sources */,
 				4C229A1D22059B240031E60F /* LoginWireframe.swift in Sources */,
 				4CF439AB220773140025C392 /* User.swift in Sources */,
 				4CF439A52207684C0025C392 /* ObjectContextExtension.swift in Sources */,

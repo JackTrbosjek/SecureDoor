@@ -24,5 +24,44 @@ class CoreDataDoorService: DoorService {
         }
     }
     
+    func addInitialDoorsIfNeeded() {
+        do {
+            let count = try viewContext.countNumberOfEntities(withType: CoreDoor.self)
+            if count == 0 {
+                let users = try getLocalUsers()
+                let frontDoor = viewContext.addEntity(withType: CoreDoor.self)
+                populateCoreDore(with: "Front Door", coreDoor: frontDoor, users: users.test1, users.test2, users.test3)
+                let storageDoor = viewContext.addEntity(withType: CoreDoor.self)
+                populateCoreDore(with: "Storage Door", coreDoor: storageDoor, users: users.test1, users.test2)
+                try viewContext.save()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func populateCoreDore(with name: String, coreDoor: CoreDoor?, users: CoreUser?...) {
+        coreDoor?.id = UUID()
+        coreDoor?.name = name
+        coreDoor?.users = NSSet.init(array: users as [Any])
+    }
+    
+    private func getLocalUsers() throws -> (test1: CoreUser?, test2: CoreUser?, test3: CoreUser?, test4: CoreUser?) {
+        let users = try viewContext.allEntities(withType: CoreUser.self)
+        let test1 = users.first { (cu) -> Bool in
+            cu.email == "test1@test.com"
+        }
+        let test2 = users.first { (cu) -> Bool in
+            cu.email == "test2@test.com"
+        }
+        let test3 = users.first { (cu) -> Bool in
+            cu.email == "test3@test.com"
+        }
+        let test4 = users.first { (cu) -> Bool in
+            cu.email == "test4@test.com"
+        }
+        return (test1: test1, test2: test2, test3: test3, test4: test4)
+    }
+    
     
 }

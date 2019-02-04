@@ -11,8 +11,9 @@ import Foundation
 extension CoreDoor {
     var door: Door {
         return Door(
-            id: self.id,
-            name: self.name)
+            id: self.id!,
+            name: self.name!,
+            users: self.users!.toUserArray())
     }
 }
 extension Array where Element: CoreDoor {

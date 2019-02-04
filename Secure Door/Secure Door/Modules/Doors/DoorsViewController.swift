@@ -20,7 +20,6 @@ final class DoorsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Doors"
         presenter.viewDidLoad()
     }
 	

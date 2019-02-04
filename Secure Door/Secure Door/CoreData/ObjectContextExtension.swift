@@ -17,11 +17,17 @@ protocol NSManagedObjectContextProtocol {
     func addEntity<T: NSManagedObject>(withType type : T.Type) -> T?
     func deleteEntities<T: NSManagedObject>(withType type: T.Type, predicate: NSPredicate?) throws -> [T]?
     func deleteEntities<T: NSManagedObject>(withType type: T.Type) throws -> [T]?
+    func countNumberOfEntities<T: NSManagedObject>(withType type: T.Type) throws -> Int
     func save() throws
     func delete(_ object: NSManagedObject)
 }
 
 extension NSManagedObjectContext: NSManagedObjectContextProtocol {
+    
+    func countNumberOfEntities<T>(withType type: T.Type) throws -> Int where T : NSManagedObject {
+        let request = NSFetchRequest<T>(entityName: T.className)
+        return try count(for: request)
+    }
     
     func allEntities<T>(withType type: T.Type) throws -> [T] where T : NSManagedObject {
         return try allEntities(withType: type, predicate: nil, sortDescriptor: nil)

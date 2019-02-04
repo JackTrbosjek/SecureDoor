@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var initializers: [Initializable] = [
         SwinjectInitializer(),
         ProgressHudInitializer(),
-        FirebaseInitializer()
+        FirebaseInitializer(),
+        CoreDataInitializer()
     ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

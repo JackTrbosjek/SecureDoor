@@ -21,9 +21,7 @@ final class DoorsInteractor {
 
 extension DoorsInteractor: DoorsInteractorInterface {
     func getDoors() -> Result<[Door]> {
-        let doors: [Door] = [Door(id: UUID(), name: "Front Door"), Door(id: UUID(), name: "Back Door")]
-        return .Success(doors)
-        //return _doorService.getDoors()
+        return _doorService.getDoors()
     }
     
 }

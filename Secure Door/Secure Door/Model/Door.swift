@@ -9,16 +9,17 @@
 import Foundation
 
 class Door : BaseModel {
-    var name: String?
-    
-    init(id: UUID?, name: String?) {
+    var name: String
+    var users: [User]
+    init(id: UUID, name: String, users: [User]) {
         self.name = name
+        self.users = users
         super.init(id: id)
     }
 }
 
 extension Door: DoorViewItemInterface {
     var title: String {
-        return self.name ?? "Missing name"
+        return self.name
     }
 }
