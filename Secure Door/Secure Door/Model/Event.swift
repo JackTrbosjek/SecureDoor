@@ -22,3 +22,15 @@ class Event: BaseModel {
         super.init(id: id)
     }
 }
+
+extension Event: EventViewItemInterface {
+    var eventText: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = formatter.string(from: dateCreated)
+        
+        let statusString = allowed ? "ALLOWED" : "DENIED"
+        
+        return String.init(format: "%@\n%@ - %@ \nStatus: %@", dateString, user.email, door.name, statusString)
+    }
+}

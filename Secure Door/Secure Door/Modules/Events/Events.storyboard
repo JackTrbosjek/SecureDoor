@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Events View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="EventsViewController" id="zIc-eW-6fX" customClass="EventsViewController" customModule="Secure_Door" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybI-1O-hkS">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="eventCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="GHL-3r-G2R" customClass="EventTableViewCell" customModule="Secure_Door" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GHL-3r-G2R" id="HO9-C8-R45">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xd-Xr-M8r">
+                                                    <rect key="frame" x="20" y="16" width="319" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Xd-Xr-M8r" secondAttribute="trailing" constant="5" id="GaV-Lw-sJ2"/>
+                                                <constraint firstItem="7Xd-Xr-M8r" firstAttribute="bottom" secondItem="HO9-C8-R45" secondAttribute="bottomMargin" constant="5" id="a1K-pG-GmE"/>
+                                                <constraint firstItem="7Xd-Xr-M8r" firstAttribute="leading" secondItem="HO9-C8-R45" secondAttribute="leadingMargin" constant="5" id="jUJ-eT-gCq"/>
+                                                <constraint firstItem="7Xd-Xr-M8r" firstAttribute="top" secondItem="HO9-C8-R45" secondAttribute="topMargin" constant="5" id="qvT-88-ZAA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventTextLabel" destination="7Xd-Xr-M8r" id="VVW-ws-aTP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zIc-eW-6fX" id="0Fe-kQ-EbQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ybI-1O-hkS" firstAttribute="top" secondItem="3pi-N7-nbV" secondAttribute="top" constant="8" id="5TP-UT-tIN"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="ybI-1O-hkS" secondAttribute="trailing" constant="8" id="hnr-OX-VEP"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="ybI-1O-hkS" secondAttribute="bottom" constant="8" id="kLO-DW-fA5"/>
+                            <constraint firstItem="ybI-1O-hkS" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="8" id="uw4-cp-nds"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ybI-1O-hkS" id="JPg-Jt-Bjh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="303"/>
+        </scene>
+    </scenes>
+</document>

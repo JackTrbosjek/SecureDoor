@@ -38,6 +38,8 @@ extension MainMenuWireframe: MainMenuWireframeInterface {
         switch option {
         case .doors:
             presentDoors()
+        case .events:
+            presentEvents()
         case .login:
             navigateToLogin()
         default:
@@ -48,6 +50,11 @@ extension MainMenuWireframe: MainMenuWireframeInterface {
     
     private func presentDoors() {
         let controller = DoorsContainer.buildController()
+        revelViewController?.setMainController(controller)
+    }
+    
+    private func presentEvents() {
+        let controller = EventsContainer.buildController()
         revelViewController?.setMainController(controller)
     }
     
