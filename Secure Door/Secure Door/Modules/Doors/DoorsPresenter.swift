@@ -35,7 +35,24 @@ final class DoorsPresenter {
 extension DoorsPresenter: DoorsPresenterInterface {
     
     func viewDidLoad() {
-        _items = _interactor.getDoors().success!
+        _items = _interactor.getDoors().success ?? []
+        if _interactor.isUserAdmin() {
+            _view?.showAddIcon()
+        }
+    }
+    
+    func addDoorAction() {
+        _wireframe.showDoorInputAlert { [weak self] (doorName) in
+            guard let doorName = doorName, !doorName.isEmpty else {
+                self?._wireframe.showAlert(with: "Wrong input", message: "Door name can't be empty")
+                return
+            }
+            guard let door = self?._interactor.addDoor(name: doorName).success else {
+                self?._wireframe.showErrorAlert(with: "Error while adding door")
+                return
+            }
+            self?._items.append(door)
+        }
     }
     
     func numberOfSections() -> Int {

@@ -12,4 +12,5 @@ protocol DoorService : class {
     func getDoors() -> Result<[Door]>
     func getDoor(withId id: UUID) -> Result<Door>
     func addInitialDoorsIfNeeded()
+    func addDoor(name: String) -> Result<Door>
 }

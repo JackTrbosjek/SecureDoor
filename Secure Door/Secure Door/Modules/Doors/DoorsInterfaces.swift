@@ -13,10 +13,12 @@ enum DoorsNavigationOption {
 
 protocol DoorsWireframeInterface: WireframeInterface {
     func navigate(to option: DoorsNavigationOption)
+    func showDoorInputAlert(completion: @escaping (String?)->Void)
 }
 
 protocol DoorsViewInterface: ViewInterface {
     func reloadData()
+    func showAddIcon()
 }
 
 protocol DoorsPresenterInterface: PresenterInterface {
@@ -24,11 +26,15 @@ protocol DoorsPresenterInterface: PresenterInterface {
     func numberOrItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> DoorViewItemInterface
     func didSelectItem(at indexPath: IndexPath)
+    
+    func addDoorAction()
 }
 
 protocol DoorsInteractorInterface: InteractorInterface {
     func getDoors() -> Result<[Door]>
     func isUserAllowedToOpenDoor(doorId: UUID) -> Result<Bool>
+    func isUserAdmin() -> Bool
+    func addDoor(name: String) -> Result<Door>
 }
 
 protocol DoorViewItemInterface {

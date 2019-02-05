@@ -37,4 +37,19 @@ extension DoorsWireframe: DoorsWireframeInterface {
 
     func navigate(to option: DoorsNavigationOption) {
     }
+    
+    func showDoorInputAlert(completion: @escaping (String?)->Void) {
+        let alert = UIAlertController(title: "New Door", message: "Enter door name:", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Door name..."
+        }
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            completion(textField?.text)
+        }))
+        
+        navigationController?.present(alert, animated: true, completion: nil)
+    }
 }

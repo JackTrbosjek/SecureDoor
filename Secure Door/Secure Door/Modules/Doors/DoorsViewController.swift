@@ -31,6 +31,14 @@ extension DoorsViewController: DoorsViewInterface {
     func reloadData() {
         tableView.reloadData()
     }
+    
+    func showAddIcon() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAction))
+    }
+    
+    @objc func addAction() {
+        presenter.addDoorAction()
+    }
 }
 
 extension DoorsViewController: UITableViewDataSource {

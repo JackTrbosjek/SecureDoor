@@ -8,12 +8,15 @@
 
 import Foundation
 
-class CoreDataDoorService: DoorService {
+class CoreDataDoorService {
     private let viewContext: NSManagedObjectContextProtocol
     
     init(viewContext: NSManagedObjectContextProtocol) {
         self.viewContext = viewContext
     }
+}
+
+extension CoreDataDoorService : DoorService {
     
     func getDoors() -> Result<[Door]> {
         do {
@@ -39,6 +42,17 @@ class CoreDataDoorService: DoorService {
         }
     }
     
+    func addDoor(name: String) -> Result<Door> {
+        do {
+            let newDoor = viewContext.addEntity(withType: CoreDoor.self)
+            populateCoreDore(with: name, coreDoor: newDoor)
+            try viewContext.save()
+            return Result(success: newDoor!.door)
+        } catch {
+            return Result(error: error)
+        }
+    }
+    
     func addInitialDoorsIfNeeded() {
         do {
             let count = try viewContext.countNumberOfEntities(withType: CoreDoor.self)
@@ -54,6 +68,8 @@ class CoreDataDoorService: DoorService {
             print(error.localizedDescription)
         }
     }
+    
+    
     
     private func populateCoreDore(with name: String, coreDoor: CoreDoor?, users: CoreUser?...) {
         coreDoor?.id = UUID()

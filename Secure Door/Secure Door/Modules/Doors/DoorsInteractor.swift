@@ -24,6 +24,14 @@ final class DoorsInteractor {
 // MARK: - Extensions -
 
 extension DoorsInteractor: DoorsInteractorInterface {
+    func addDoor(name: String) -> Result<Door> {
+        return _doorService.addDoor(name: name)
+    }
+    
+    func isUserAdmin() -> Bool {
+        return _userService.isAdminUser()
+    }
+    
     func getDoors() -> Result<[Door]> {
         return _doorService.getDoors()
     }
@@ -35,24 +43,24 @@ extension DoorsInteractor: DoorsInteractorInterface {
         let result = _doorService.getDoor(withId: doorId)
         switch result {
         case let .Success(door):
-            return .Success(checkIsUserAllowedToAccessDoor(door: door))
+            return .Success(_checkIsUserAllowedToAccessDoor(door: door))
         case let .Error(error):
             return .Error(error)
         }
     }
     
-    private func checkIsUserAllowedToAccessDoor(door: Door) -> Bool{
+    private func _checkIsUserAllowedToAccessDoor(door: Door) -> Bool{
         guard let currentUserId = _userService.getCurrentUserId() else {
             return false
         }
         let isAllowed = door.users.contains { (user) -> Bool in
             user.firebaseId == currentUserId
         }
-        createEvent(allowed: isAllowed, door: door, userFirebaseId: currentUserId)
+        _createEvent(allowed: isAllowed, door: door, userFirebaseId: currentUserId)
         return isAllowed
     }
     
-    private func createEvent(allowed: Bool, door: Door, userFirebaseId: String) {
+    private func _createEvent(allowed: Bool, door: Door, userFirebaseId: String) {
         let event: EventCreate = (allowed: allowed, userFirebaseId: userFirebaseId, doorId: door.id!)
         _eventService.add(event: event)
     }

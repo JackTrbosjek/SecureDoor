@@ -68,15 +68,6 @@ public func ?? <T> (
     }
 }
 
-// We aren't actually proposing this overload; we think there should
-// be a compiler warning that catches the promotion that you probably
-// don't want.
-public func ?? <T> (
-    result: Result<T>?, defaultValue: @autoclosure () -> T
-    ) -> T {
-    fatalError("We should warn about Result<T> being promoted to Result<T>?")
-}
-
 /// Translate the execution of a throwing closure into a Result
 func catchResult<Success>(
     invoking body: () throws -> Success
