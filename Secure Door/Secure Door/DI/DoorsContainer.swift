@@ -25,7 +25,7 @@ class DoorsContainer: ChildContainerProtocol {
         instance = Container(parent: parentContainer, defaultObjectScope: .graph)
         
         instance.register(DoorsInteractorInterface.self) { r in
-            DoorsInteractor(doorService: r.resolve(DoorService.self)!, userService: r.resolve(UserService.self)!)
+            DoorsInteractor(doorService: r.resolve(DoorService.self)!, userService: r.resolve(UserService.self)!, eventService: r.resolve(EventService.self)!)
         }
         
         instance.register(DoorsWireframeInterface.self) { (r, viewController: DoorsViewController) in

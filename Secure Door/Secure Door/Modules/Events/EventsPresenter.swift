@@ -17,7 +17,7 @@ final class EventsPresenter {
     private let _interactor: EventsInteractorInterface
     
     private var _items: [Event] = [] {
-        didSet{
+        didSet {
             _view?.reloadData()
         }
     }
@@ -33,10 +33,15 @@ final class EventsPresenter {
 
 // MARK: - Extensions -
 extension EventsPresenter: EventsPresenterInterface {
+    
     func viewDidLoad() {
-        _items = [
-            Event(id: UUID(), dateCreated: Date(), allowed: true, user: User(id: UUID(), email: "radnom@radnom.com", firebaseId: "2342523"), door: Door(id: UUID(), name: "Temp Door", users: [])),
-            Event(id: UUID(), dateCreated: Date(), allowed: false, user: User(id: UUID(), email: "radnom2@radnom.com", firebaseId: "2342523"), door: Door(id: UUID(), name: "Temp Door2", users: []))]
+        let result = _interactor.getEvents()
+        switch result {
+        case let .Success(events):
+            _items = events
+        case let .Error(error):
+            _wireframe.showErrorAlert(with: error.localizedDescription)
+        }
     }
     
     func numberOfSections() -> Int {

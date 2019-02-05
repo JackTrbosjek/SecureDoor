@@ -25,7 +25,7 @@ class EventsContainer: ChildContainerProtocol {
         instance = Container(parent: parentContainer, defaultObjectScope: .graph)
         
         instance.register(EventsInteractorInterface.self) { r in
-            EventsInteractor()
+            EventsInteractor(eventService: r.resolve(EventService.self)!, userService: r.resolve(UserService.self)!)
         }
         
         instance.register(EventsWireframeInterface.self) { (r, viewController: EventsViewController) in

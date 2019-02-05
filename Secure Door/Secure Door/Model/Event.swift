@@ -23,6 +23,8 @@ class Event: BaseModel {
     }
 }
 
+typealias EventCreate = (allowed: Bool, userFirebaseId: String, doorId: UUID)
+
 extension Event: EventViewItemInterface {
     var eventText: String {
         let formatter = DateFormatter()

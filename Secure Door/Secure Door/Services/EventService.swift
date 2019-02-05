@@ -10,6 +10,6 @@ import Foundation
 
 protocol EventService: class {
     func getAllEvents() -> Result<[Event]>
-    func getEventForUser(userId: UUID) -> Result<[Event]>
-    func add(event: Event)
+    func getEventForUser(firebaseId: String) -> Result<[Event]>
+    func add(event: EventCreate)
 }

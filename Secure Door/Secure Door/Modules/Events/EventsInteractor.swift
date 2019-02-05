@@ -9,13 +9,25 @@
 import Foundation
 
 final class EventsInteractor {
+    // MARK: - Private properties
+    private let _eventService: EventService
+    private let _userService: UserService
+    
+    init(eventService: EventService, userService: UserService) {
+        _eventService = eventService
+        _userService = userService
+    }
 }
 
 // MARK: - Extensions -
 
 extension EventsInteractor: EventsInteractorInterface {
     func getEvents() -> Result<[Event]> {
-        return .Success([])
+        if _userService.isAdminUser() {
+            return _eventService.getAllEvents()
+        } else {
+            return _eventService.getEventForUser(firebaseId: _userService.getCurrentUserId()!)
+        }
     }
     
 }

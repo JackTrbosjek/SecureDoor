@@ -18,34 +18,35 @@ class CoreDataEventService : EventService {
     
     func getAllEvents() -> Result<[Event]> {
         do {
-            let events = try viewContext.allEntities(withType: CoreEvent.self)
+            let sortDescriptor = NSSortDescriptor(key: "dateCreated", ascending: false)
+            let events = try viewContext.allEntities(withType: CoreEvent.self, predicate: nil, sortDescriptor: sortDescriptor)
             return .Success(events.toEventArray())
         } catch {
             return .Error(error)
         }
     }
     
-    func getEventForUser(userId: UUID) -> Result<[Event]> {
+    func getEventForUser(firebaseId: String) -> Result<[Event]> {
         do {
-            let predicate = NSPredicate(format: "user.id = %@", userId.uuidString)
-            let events = try viewContext.allEntities(withType: CoreEvent.self, predicate: predicate)
+            let predicate = NSPredicate(format: "user.firebaseId = %@", firebaseId)
+            let sortDescriptor = NSSortDescriptor(key: "dateCreated", ascending: false)
+            let events = try viewContext.allEntities(withType: CoreEvent.self, predicate: predicate, sortDescriptor: sortDescriptor)
             return .Success(events.toEventArray())
-            
         } catch {
             return .Error(error)
         }
     }
     
-    func add(event: Event) {
+    func add(event: EventCreate) {
         do {
-            let coreUser = try viewContext.getEntity(withType: CoreUser.self, predicate: NSPredicate(format: "id = %@", event.user.id!.uuidString))
-            let coreDoor = try viewContext.getEntity(withType: CoreDoor.self, predicate: NSPredicate(format: "id = %@", event.door.id!.uuidString))
+            let coreUser = try viewContext.getEntity(withType: CoreUser.self, predicate: NSPredicate(format: "firebaseId = %@", event.userFirebaseId))
+            let coreDoor = try viewContext.getEntity(withType: CoreDoor.self, predicate: NSPredicate(format: "id = %@", event.doorId.uuidString))
             let newEvent = viewContext.addEntity(withType: CoreEvent.self)
-            newEvent?.id = event.id
+            newEvent?.id = UUID()
             newEvent?.door = coreDoor
             newEvent?.user = coreUser
             newEvent?.allowed = event.allowed
-            newEvent?.dateCreated = event.dateCreated
+            newEvent?.dateCreated = Date()
             try viewContext.save()
         }
         catch {

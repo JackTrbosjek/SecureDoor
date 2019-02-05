@@ -12,10 +12,12 @@ final class DoorsInteractor {
     // MARK: - Private properties
     private let _doorService: DoorService
     private let _userService: UserService
+    private let _eventService: EventService
     
-    init(doorService: DoorService, userService: UserService) {
+    init(doorService: DoorService, userService: UserService, eventService: EventService) {
         _doorService = doorService
         _userService = userService
+        _eventService = eventService
     }
 }
 
@@ -43,8 +45,15 @@ extension DoorsInteractor: DoorsInteractorInterface {
         guard let currentUserId = _userService.getCurrentUserId() else {
             return false
         }
-        return door.users.contains { (user) -> Bool in
+        let isAllowed = door.users.contains { (user) -> Bool in
             user.firebaseId == currentUserId
         }
+        createEvent(allowed: isAllowed, door: door, userFirebaseId: currentUserId)
+        return isAllowed
+    }
+    
+    private func createEvent(allowed: Bool, door: Door, userFirebaseId: String) {
+        let event: EventCreate = (allowed: allowed, userFirebaseId: userFirebaseId, doorId: door.id!)
+        _eventService.add(event: event)
     }
 }
