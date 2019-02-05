@@ -11,10 +11,12 @@ import Foundation
 class User : BaseModel {
     var email : String = ""
     var firebaseId: String = ""
+    var doors: [Door]?
     
-    init(id: UUID?, email: String, firebaseId: String) {
+    init(id: UUID?, email: String, firebaseId: String, doors:[Door]?) {
         self.email = email
         self.firebaseId = firebaseId
+        self.doors = doors
         super.init(id: id)
     }
 }

@@ -21,7 +21,7 @@ extension CoreDataDoorService : DoorService {
     func getDoors() -> Result<[Door]> {
         do {
             let doors = try viewContext.allEntities(withType: CoreDoor.self)
-            return .Success(doors.toDoorArray())
+            return .Success(doors.toDoorArray(mapUsers: true))
         } catch {
             return .Error(error)
         }
@@ -32,7 +32,7 @@ extension CoreDataDoorService : DoorService {
             let predicate = NSPredicate(format: "id = %@", id.uuidString)
             let door = try viewContext.getEntity(withType: CoreDoor.self, predicate: predicate)
             if let door = door {
-                return .Success(door.door)
+                return .Success(door.getDoor(mapUsers: true))
             } else {
                 return .Error(CoreError(message: "Door with specified id doesn't exist"))
             }
@@ -47,7 +47,7 @@ extension CoreDataDoorService : DoorService {
             let newDoor = viewContext.addEntity(withType: CoreDoor.self)
             _populateCoreDore(with: name, coreDoor: newDoor)
             try viewContext.save()
-            return Result(success: newDoor!.door)
+            return Result(success: newDoor!.getDoor(mapUsers: false))
         } catch {
             return Result(error: error)
         }

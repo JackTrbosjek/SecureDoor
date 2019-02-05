@@ -40,12 +40,17 @@ extension MainMenuWireframe: MainMenuWireframeInterface {
             presentDoors()
         case .events:
             presentEvents()
+        case .users:
+            presentUsers()
         case .login:
             navigateToLogin()
-        default:
-            break
         }
         revelViewController?.revealToggle(animated: true)
+    }
+    
+    private func presentUsers() {
+        let controller = UsersContainer.buildController()
+        revelViewController?.setMainController(controller)
     }
     
     private func presentDoors() {

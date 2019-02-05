@@ -15,5 +15,6 @@ class SwinjectInitializer : Initializable {
         MainMenuContainer.build(parentContainer: appContainer)
         DoorsContainer.build(parentContainer: appContainer)
         EventsContainer.build(parentContainer: appContainer)
+        UsersContainer.build(parentContainer: appContainer)
     }
 }

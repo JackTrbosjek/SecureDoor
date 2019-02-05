@@ -53,7 +53,7 @@ extension DoorsInteractor: DoorsInteractorInterface {
         guard let currentUserId = _userService.getCurrentUserId() else {
             return false
         }
-        let isAllowed = door.users.contains { (user) -> Bool in
+        let isAllowed = door.users!.contains { (user) -> Bool in
             user.firebaseId == currentUserId
         }
         _createEvent(allowed: isAllowed, door: door, userFirebaseId: currentUserId)

@@ -13,7 +13,8 @@ extension CoreUser {
         return User(
             id: self.id,
             email: self.email ?? "N/A",
-            firebaseId: self.firebaseId ?? "")
+            firebaseId: self.firebaseId ?? "",
+            doors: self.doors?.toDoorArray(mapUsers: false))
     }
 }
 extension Array where Element: CoreUser {
@@ -30,3 +31,4 @@ extension NSSet {
         return coreUsers.toUserArray()
     }
 }
+

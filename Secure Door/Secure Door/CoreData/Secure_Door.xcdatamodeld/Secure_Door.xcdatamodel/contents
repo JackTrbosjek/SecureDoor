@@ -16,7 +16,7 @@
     <entity name="CoreUser" representedClassName="CoreUser" parentEntity="CoreEntity" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firebaseId" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="doors" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreDoor" inverseName="users" inverseEntity="CoreDoor" syncable="YES"/>
+        <relationship name="doors" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CoreDoor" inverseName="users" inverseEntity="CoreDoor" syncable="YES"/>
     </entity>
     <elements>
         <element name="CoreDoor" positionX="-63" positionY="-18" width="128" height="75"/>

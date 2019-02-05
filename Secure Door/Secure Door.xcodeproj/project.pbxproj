@@ -33,6 +33,14 @@
 		4C122E6E22061FEC000569BD /* MainMenuContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6D22061FEC000569BD /* MainMenuContainer.swift */; };
 		4C122E70220621BC000569BD /* SWRevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C122E6F220621BC000569BD /* SWRevelController.swift */; };
 		4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15A4142206EE9E0070C239 /* MenuButton.swift */; };
+		4C15F260220A2DFC00FD00AA /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C15F25A220A2DFC00FD00AA /* Users.storyboard */; };
+		4C15F261220A2DFC00FD00AA /* UsersInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F25B220A2DFC00FD00AA /* UsersInterfaces.swift */; };
+		4C15F262220A2DFC00FD00AA /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F25C220A2DFC00FD00AA /* UsersPresenter.swift */; };
+		4C15F263220A2DFC00FD00AA /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F25D220A2DFC00FD00AA /* UsersViewController.swift */; };
+		4C15F264220A2DFC00FD00AA /* UsersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F25E220A2DFC00FD00AA /* UsersInteractor.swift */; };
+		4C15F265220A2DFC00FD00AA /* UsersWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F25F220A2DFC00FD00AA /* UsersWireframe.swift */; };
+		4C15F26A220A319A00FD00AA /* UsersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F269220A319A00FD00AA /* UsersContainer.swift */; };
+		4C15F26C220A36FB00FD00AA /* UserDoorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15F26B220A36FB00FD00AA /* UserDoorTableViewCell.swift */; };
 		4C2299CD2205957F0031E60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299CC2205957F0031E60F /* AppDelegate.swift */; };
 		4C2299D52205957F0031E60F /* Secure_Door.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C2299D32205957F0031E60F /* Secure_Door.xcdatamodeld */; };
 		4C2299D7220595810031E60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2299D6220595810031E60F /* Assets.xcassets */; };
@@ -66,7 +74,7 @@
 		4CF439A7220768A90025C392 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439A6220768A90025C392 /* NSObjectExtension.swift */; };
 		4CF439A9220772A70025C392 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439A8220772A70025C392 /* Door.swift */; };
 		4CF439AB220773140025C392 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439AA220773140025C392 /* User.swift */; };
-		4CF439AE220773B20025C392 /* CoreDore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439AD220773B20025C392 /* CoreDore.swift */; };
+		4CF439AE220773B20025C392 /* CoreDoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439AD220773B20025C392 /* CoreDoor.swift */; };
 		4CF439B0220774920025C392 /* DoorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439AF220774920025C392 /* DoorService.swift */; };
 		4CF439B32207751E0025C392 /* CoreDataDoorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439B22207751E0025C392 /* CoreDataDoorService.swift */; };
 		4CF439B52207765B0025C392 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF439B42207765B0025C392 /* BaseModel.swift */; };
@@ -120,6 +128,14 @@
 		4C122E6D22061FEC000569BD /* MainMenuContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuContainer.swift; sourceTree = "<group>"; };
 		4C122E6F220621BC000569BD /* SWRevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRevelController.swift; sourceTree = "<group>"; };
 		4C15A4142206EE9E0070C239 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		4C15F25A220A2DFC00FD00AA /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
+		4C15F25B220A2DFC00FD00AA /* UsersInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInterfaces.swift; sourceTree = "<group>"; };
+		4C15F25C220A2DFC00FD00AA /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
+		4C15F25D220A2DFC00FD00AA /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		4C15F25E220A2DFC00FD00AA /* UsersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInteractor.swift; sourceTree = "<group>"; };
+		4C15F25F220A2DFC00FD00AA /* UsersWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersWireframe.swift; sourceTree = "<group>"; };
+		4C15F269220A319A00FD00AA /* UsersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersContainer.swift; sourceTree = "<group>"; };
+		4C15F26B220A36FB00FD00AA /* UserDoorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDoorTableViewCell.swift; sourceTree = "<group>"; };
 		4C2299C92205957F0031E60F /* Secure Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Secure Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2299CC2205957F0031E60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C2299D42205957F0031E60F /* Secure_Door.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Secure_Door.xcdatamodel; sourceTree = "<group>"; };
@@ -157,7 +173,7 @@
 		4CF439A6220768A90025C392 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		4CF439A8220772A70025C392 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
 		4CF439AA220773140025C392 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4CF439AD220773B20025C392 /* CoreDore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDore.swift; sourceTree = "<group>"; };
+		4CF439AD220773B20025C392 /* CoreDoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDoor.swift; sourceTree = "<group>"; };
 		4CF439AF220774920025C392 /* DoorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorService.swift; sourceTree = "<group>"; };
 		4CF439B22207751E0025C392 /* CoreDataDoorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDoorService.swift; sourceTree = "<group>"; };
 		4CF439B42207765B0025C392 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -257,6 +273,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4C15F259220A2DE300FD00AA /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				4C15F266220A2EAE00FD00AA /* Cells */,
+				4C15F25A220A2DFC00FD00AA /* Users.storyboard */,
+				4C15F25B220A2DFC00FD00AA /* UsersInterfaces.swift */,
+				4C15F25C220A2DFC00FD00AA /* UsersPresenter.swift */,
+				4C15F25D220A2DFC00FD00AA /* UsersViewController.swift */,
+				4C15F25E220A2DFC00FD00AA /* UsersInteractor.swift */,
+				4C15F25F220A2DFC00FD00AA /* UsersWireframe.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		4C15F266220A2EAE00FD00AA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C15F26B220A36FB00FD00AA /* UserDoorTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4C2299C02205957F0031E60F = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +342,7 @@
 		4C2299EF2205962F0031E60F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4C15F259220A2DE300FD00AA /* Users */,
 				4C0F5B462208ED20007F2424 /* Events */,
 				4CF439B622077D850025C392 /* Doors */,
 				4C122E5422061A3D000569BD /* MainMenu */,
@@ -430,6 +469,7 @@
 				4C122E6D22061FEC000569BD /* MainMenuContainer.swift */,
 				4CF439C622078A4E0025C392 /* DoorsContainer.swift */,
 				4C0F5B532208EE47007F2424 /* EventsContainer.swift */,
+				4C15F269220A319A00FD00AA /* UsersContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -449,7 +489,7 @@
 		4CF439AC2207739E0025C392 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				4CF439AD220773B20025C392 /* CoreDore.swift */,
+				4CF439AD220773B20025C392 /* CoreDoor.swift */,
 				4C0F5B3C2208D29D007F2424 /* CoreUser.swift */,
 				4C0F5B442208E678007F2424 /* CoreEvent.swift */,
 			);
@@ -573,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C122E6722061F1D000569BD /* MainMenu.storyboard in Resources */,
+				4C15F260220A2DFC00FD00AA /* Users.storyboard in Resources */,
 				4C229A1E22059B240031E60F /* Login.storyboard in Resources */,
 				4C0F5B4D2208ED3D007F2424 /* Events.storyboard in Resources */,
 				4C2299DA220595810031E60F /* LaunchScreen.storyboard in Resources */,
@@ -623,6 +664,7 @@
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -633,6 +675,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,9 +710,10 @@
 			files = (
 				4C122E6B22061F1D000569BD /* MainMenuInteractor.swift in Sources */,
 				4CF439A7220768A90025C392 /* NSObjectExtension.swift in Sources */,
+				4C15F263220A2DFC00FD00AA /* UsersViewController.swift in Sources */,
 				4C229A2122059B5E0031E60F /* UserService.swift in Sources */,
 				4C0F5B502208ED3D007F2424 /* EventsViewController.swift in Sources */,
-				4CF439AE220773B20025C392 /* CoreDore.swift in Sources */,
+				4CF439AE220773B20025C392 /* CoreDoor.swift in Sources */,
 				4C229A292205BA2F0031E60F /* ContainerProtocol.swift in Sources */,
 				4C122E6A22061F1D000569BD /* MainMenuViewController.swift in Sources */,
 				4CF439C022077DA50025C392 /* DoorsViewController.swift in Sources */,
@@ -685,21 +729,25 @@
 				4C229A2D2205BC880031E60F /* LoginContainer.swift in Sources */,
 				4CF439B52207765B0025C392 /* BaseModel.swift in Sources */,
 				4C0F5B4E2208ED3D007F2424 /* EventsInterfaces.swift in Sources */,
+				4C15F26A220A319A00FD00AA /* UsersContainer.swift in Sources */,
 				4C122E6922061F1D000569BD /* MainMenuPresenter.swift in Sources */,
 				4CF439A1220744900025C392 /* FirebaseInitializer.swift in Sources */,
 				4CF439C122077DA50025C392 /* DoorsInteractor.swift in Sources */,
 				4C2299F82205964F0031E60F /* BasePresenter.swift in Sources */,
+				4C15F264220A2DFC00FD00AA /* UsersInteractor.swift in Sources */,
 				4CF439C5220782510025C392 /* DoorTableViewCell.swift in Sources */,
 				4C2299F52205964F0031E60F /* BaseInteractor.swift in Sources */,
 				4C0F5B432208E584007F2424 /* CoreDataEventService.swift in Sources */,
 				4C0F5B412208E416007F2424 /* Event.swift in Sources */,
 				4C229A1B22059B240031E60F /* LoginPresenter.swift in Sources */,
 				4C0F5B3F2208E3F8007F2424 /* EventService.swift in Sources */,
+				4C15F26C220A36FB00FD00AA /* UserDoorTableViewCell.swift in Sources */,
 				4C0F5B4F2208ED3D007F2424 /* EventsPresenter.swift in Sources */,
 				4C229A2622059E160031E60F /* Result.swift in Sources */,
 				4C15A4152206EE9E0070C239 /* MenuButton.swift in Sources */,
 				4CF439BF22077DA50025C392 /* DoorsPresenter.swift in Sources */,
 				4C0F5B372208C85F007F2424 /* CoreDataInitializer.swift in Sources */,
+				4C15F265220A2DFC00FD00AA /* UsersWireframe.swift in Sources */,
 				4C229A2422059C090031E60F /* FirebaseUserService.swift in Sources */,
 				4C229A1C22059B240031E60F /* LoginInterfaces.swift in Sources */,
 				4CF4399F2207444B0025C392 /* ProgressHudInitializer.swift in Sources */,
@@ -710,6 +758,7 @@
 				4C2299F62205964F0031E60F /* BaseView.swift in Sources */,
 				4CF439A9220772A70025C392 /* Door.swift in Sources */,
 				4CF439BE22077DA50025C392 /* DoorsInterfaces.swift in Sources */,
+				4C15F261220A2DFC00FD00AA /* UsersInterfaces.swift in Sources */,
 				4CF439C722078A4E0025C392 /* DoorsContainer.swift in Sources */,
 				4C229A2B2205BB0F0031E60F /* AppContainer.swift in Sources */,
 				4C229A0D220596FB0031E60F /* UIStoryboardExtension.swift in Sources */,
@@ -721,6 +770,7 @@
 				4C122E6822061F1D000569BD /* MainMenuInterfaces.swift in Sources */,
 				4C229A09220596DD0031E60F /* SecureDoorNavigationController.swift in Sources */,
 				4C0F5B3D2208D29D007F2424 /* CoreUser.swift in Sources */,
+				4C15F262220A2DFC00FD00AA /* UsersPresenter.swift in Sources */,
 				4C0F5B512208ED3D007F2424 /* EventsInteractor.swift in Sources */,
 				4C229A1D22059B240031E60F /* LoginWireframe.swift in Sources */,
 				4CF439AB220773140025C392 /* User.swift in Sources */,
@@ -884,10 +934,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
 				INFOPLIST_FILE = "$(SRCROOT)/Secure Door/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-Door";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -903,10 +950,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
 				INFOPLIST_FILE = "$(SRCROOT)/Secure Door/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-Door";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -923,11 +967,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
 				INFOPLIST_FILE = "Secure DoorTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-DoorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -945,11 +985,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WC3Q4PQ98;
 				INFOPLIST_FILE = "Secure DoorTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jakov.Secure-DoorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

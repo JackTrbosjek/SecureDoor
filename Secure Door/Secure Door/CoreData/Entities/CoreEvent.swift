@@ -15,7 +15,7 @@ extension CoreEvent {
             dateCreated: self.dateCreated!,
             allowed: self.allowed,
             user: self.user!.user,
-            door: self.door!.door)
+            door: self.door!.getDoor(mapUsers: false))
     }
 }
 

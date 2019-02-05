@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import SafariServices
+import UIKit
+import Toast_Swift
 
 protocol WireframeInterface: class {
     var viewController: UIViewController? { get }
@@ -19,6 +20,7 @@ protocol WireframeInterface: class {
     func showErrorAlert(with message: String?)
     func showAlert(with title: String?, message: String?)
     func showAlert(with title: String?, message: String?, actions: [UIAlertAction])
+    func showToast(with message: String?)
 }
 
 extension WireframeInterface {
@@ -45,5 +47,9 @@ extension WireframeInterface {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach { alert.addAction($0) }
         navigationController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func showToast(with message: String?) {
+        viewController?.view.makeToast(message)
     }
 }
