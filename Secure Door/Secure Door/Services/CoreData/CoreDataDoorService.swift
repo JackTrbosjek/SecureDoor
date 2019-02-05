@@ -45,7 +45,7 @@ extension CoreDataDoorService : DoorService {
     func addDoor(name: String) -> Result<Door> {
         do {
             let newDoor = viewContext.addEntity(withType: CoreDoor.self)
-            populateCoreDore(with: name, coreDoor: newDoor)
+            _populateCoreDore(with: name, coreDoor: newDoor)
             try viewContext.save()
             return Result(success: newDoor!.door)
         } catch {
@@ -57,11 +57,11 @@ extension CoreDataDoorService : DoorService {
         do {
             let count = try viewContext.countNumberOfEntities(withType: CoreDoor.self)
             if count == 0 {
-                let users = try getLocalUsers()
+                let users = try _getLocalUsers()
                 let frontDoor = viewContext.addEntity(withType: CoreDoor.self)
-                populateCoreDore(with: "Front Door", coreDoor: frontDoor, users: users.test1, users.test2, users.test3)
+                _populateCoreDore(with: "Front Door", coreDoor: frontDoor, users: users.test1, users.test2, users.test3)
                 let storageDoor = viewContext.addEntity(withType: CoreDoor.self)
-                populateCoreDore(with: "Storage Door", coreDoor: storageDoor, users: users.test1, users.test2)
+                _populateCoreDore(with: "Storage Door", coreDoor: storageDoor, users: users.test1, users.test2)
                 try viewContext.save()
             }
         } catch {
@@ -71,13 +71,13 @@ extension CoreDataDoorService : DoorService {
     
     
     
-    private func populateCoreDore(with name: String, coreDoor: CoreDoor?, users: CoreUser?...) {
+    private func _populateCoreDore(with name: String, coreDoor: CoreDoor?, users: CoreUser?...) {
         coreDoor?.id = UUID()
         coreDoor?.name = name
         coreDoor?.users = NSSet.init(array: users as [Any])
     }
     
-    private func getLocalUsers() throws -> (test1: CoreUser?, test2: CoreUser?, test3: CoreUser?, test4: CoreUser?) {
+    private func _getLocalUsers() throws -> (test1: CoreUser?, test2: CoreUser?, test3: CoreUser?, test4: CoreUser?) {
         let users = try viewContext.allEntities(withType: CoreUser.self)
         let test1 = users.first { (cu) -> Bool in
             cu.email == "test1@test.com"

@@ -10,4 +10,5 @@ import Foundation
 
 protocol AdminUserService: class {
     func addInitialUserInfo()
+    func getUsers() -> Result<[User]>
 }
