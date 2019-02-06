@@ -14,7 +14,7 @@ class Event: BaseModel {
     var user: User
     var door: Door
     
-    init(id: UUID?, dateCreated: Date, allowed: Bool, user: User, door: Door) {
+    init(id: UUID, dateCreated: Date, allowed: Bool, user: User, door: Door) {
         self.dateCreated = dateCreated
         self.allowed = allowed
         self.user = user

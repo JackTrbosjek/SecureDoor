@@ -27,15 +27,16 @@ protocol UsersPresenterInterface: PresenterInterface {
     func numberOrItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> UserDoorViewItem
     func titleForHeader(in section: Int) -> String
-    func didSelectItem(at indexPath: IndexPath)
 }
 
 protocol UsersInteractorInterface: InteractorInterface {
     func getUsers() -> Result<[User]>
     func getDoors() -> Result<[Door]>
+    func updateUserDoor(userId: UUID, doorId: UUID, allowed: Bool) -> Result<Void>
 }
 
 struct UserDoorViewItem {
     let isAllowed: Bool
     let doorName: String
+    let switchAction: (Bool) -> ()?
 }

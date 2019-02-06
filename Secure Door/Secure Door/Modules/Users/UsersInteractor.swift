@@ -31,4 +31,8 @@ extension UsersInteractor: UsersInteractorInterface {
     func getDoors() -> Result<[Door]> {
         return _doorService.getDoors()
     }
+    
+    func updateUserDoor(userId: UUID, doorId: UUID, allowed: Bool) -> Result<Void> {
+        return _adminUserService.updateUserDoor(userId: userId, doorId: doorId, allowed: allowed)
+    }
 }

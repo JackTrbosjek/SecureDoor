@@ -69,7 +69,7 @@ extension DoorsPresenter: DoorsPresenterInterface {
     
     func didSelectItem(at indexPath: IndexPath) {
         let door = _items[indexPath.row]
-        let result = _interactor.isUserAllowedToOpenDoor(doorId: door.id!)
+        let result = _interactor.isUserAllowedToOpenDoor(doorId: door.id)
         switch result {
         case let .Success(isAllowed):
             presentUserAllowedDialog(isAllowed: isAllowed)

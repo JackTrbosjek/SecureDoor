@@ -10,9 +10,9 @@ import Foundation
 
 class BaseModel {
     
-    var id: UUID?
+    var id: UUID
     
-    init(id: UUID?) {
+    init(id: UUID) {
         self.id = id
     }
 }

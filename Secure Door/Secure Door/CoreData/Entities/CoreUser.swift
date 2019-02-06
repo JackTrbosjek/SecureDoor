@@ -11,7 +11,7 @@ import Foundation
 extension CoreUser {
     var user: User {
         return User(
-            id: self.id,
+            id: self.id!,
             email: self.email ?? "N/A",
             firebaseId: self.firebaseId ?? "",
             doors: self.doors?.toDoorArray(mapUsers: false))

@@ -19,6 +19,28 @@ class CoreDataAdminUserService {
 
 extension CoreDataAdminUserService: AdminUserService {
     
+    func updateUserDoor(userId: UUID, doorId: UUID, allowed: Bool) -> Result<Void> {
+        do {
+            let predicate = NSPredicate(format: "id = %@", userId.uuidString)
+            guard let user = try viewContext.getEntity(withType: CoreUser.self, predicate: predicate) else {
+                return Result(error: CoreError(message: "Problem with finding user"))
+            }
+            let predicateDoor = NSPredicate(format: "id = %@", doorId.uuidString)
+            guard let door = try viewContext.getEntity(withType: CoreDoor.self, predicate: predicateDoor) else {
+                return Result(error: CoreError(message: "Problem with finding door"))
+            }
+            if !allowed {
+                user.removeFromDoors(door)
+            } else {
+                user.addToDoors(door)
+            }
+            try viewContext.save()
+            return Result(success: ())
+        } catch {
+            return Result(error: error)
+        }
+    }
+    
     func getUsers() -> Result<[User]> {
         do {
             let sortDescriptor = NSSortDescriptor(key: "email", ascending: true)

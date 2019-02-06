@@ -13,6 +13,7 @@ class UserDoorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var doorNameLabel: UILabel!
     @IBOutlet weak var allowedSwitch: UISwitch!
+    var switchAction: ((Bool) -> ()?)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,10 +21,15 @@ class UserDoorTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        switchAction = nil
     }
     
+    @IBAction func switchAction(_ sender: UISwitch) {
+        switchAction?(sender.isOn)
+    }
     func configure(with item: UserDoorViewItem) {
         doorNameLabel.text = item.doorName
         allowedSwitch.setOn(item.isAllowed, animated: false)
+        switchAction = item.switchAction
     }
 }

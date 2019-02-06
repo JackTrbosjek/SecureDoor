@@ -11,7 +11,7 @@ import Foundation
 extension CoreEvent {
     var event: Event {
         return Event(
-            id: self.id,
+            id: self.id!,
             dateCreated: self.dateCreated!,
             allowed: self.allowed,
             user: self.user!.user,

@@ -13,7 +13,7 @@ class User : BaseModel {
     var firebaseId: String = ""
     var doors: [Door]?
     
-    init(id: UUID?, email: String, firebaseId: String, doors:[Door]?) {
+    init(id: UUID, email: String, firebaseId: String, doors:[Door]?) {
         self.email = email
         self.firebaseId = firebaseId
         self.doors = doors

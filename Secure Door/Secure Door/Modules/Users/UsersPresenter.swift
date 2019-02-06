@@ -19,7 +19,6 @@ final class UsersPresenter {
     private let _interactor: UsersInteractorInterface
     
     private  var _users: [User] = []
-    
     private  var _doors: [Door] = []
 
     // MARK: - Lifecycle -
@@ -34,9 +33,11 @@ final class UsersPresenter {
 // MARK: - Extensions -
 
 extension UsersPresenter: UsersPresenterInterface {
+    
     func viewDidLoad() {
         _users = _interactor.getUsers().success ?? []
         _doors = _interactor.getDoors().success ?? []
+        _view?.reloadData()
     }
     
     func numberOfSections() -> Int {
@@ -49,15 +50,24 @@ extension UsersPresenter: UsersPresenterInterface {
     
     func item(at indexPath: IndexPath) -> UserDoorViewItem {
         let door = _doors[indexPath.row]
-        let userId = _users[indexPath.section].id!
-        return UserDoorViewItem(isAllowed: door.userAllowed(userId: userId), doorName: door.name)
+        let userId = _users[indexPath.section].id
+        let switchAction = {
+            [weak self](isOn:Bool) in
+            self?.updateUserDoor(userId: userId, doorId: door.id, allowed: isOn)
+        }
+        return UserDoorViewItem(isAllowed: door.userAllowed(userId: userId), doorName: door.name, switchAction: switchAction)
     }
     
     func titleForHeader(in section: Int) -> String {
         return _users[section].email
     }
     
-    func didSelectItem(at indexPath: IndexPath) {
+    func updateUserDoor(userId: UUID, doorId: UUID, allowed: Bool) {
+        switch _interactor.updateUserDoor(userId: userId, doorId: doorId, allowed: allowed){
+        case .Success:
+            _wireframe.showToast(with: "Updated")
+        case let .Error(error):
+            _wireframe.showErrorAlert(with: error.localizedDescription)
+        }
     }
-    
 }

@@ -11,4 +11,5 @@ import Foundation
 protocol AdminUserService: class {
     func addInitialUserInfo()
     func getUsers() -> Result<[User]>
+    func updateUserDoor(userId: UUID, doorId: UUID, allowed: Bool) -> Result<Void>
 }

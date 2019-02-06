@@ -61,7 +61,7 @@ extension DoorsInteractor: DoorsInteractorInterface {
     }
     
     private func _createEvent(allowed: Bool, door: Door, userFirebaseId: String) {
-        let event: EventCreate = (allowed: allowed, userFirebaseId: userFirebaseId, doorId: door.id!)
+        let event: EventCreate = (allowed: allowed, userFirebaseId: userFirebaseId, doorId: door.id)
         _eventService.add(event: event)
     }
 }
